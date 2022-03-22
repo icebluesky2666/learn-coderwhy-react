@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="text"></h2>
+    <button id="btn">改变文本</button>
+
+    <script>
+      // 需求：点击按钮“改变文本”时,hello world -> hello java
+
+      // 1. 获取按钮和文本的dom标签
+      let keyName = 0
+      const messageMap = {
+        0: 'Hello World',
+        1: 'Hello React'
+      }
+      const btnDom = document.getElementById('btn')
+      const textDom = document.getElementById('text')
+
+      textDom.innerHTML = messageMap[keyName]
+
+      // 2. 给按钮绑定一个点击事件
+      btnDom.addEventListener('click', () => {
+        keyName++
+        // 3. 改变文本
+        textDom.innerHTML = messageMap[keyName % 2]
+      })
+    </script>
+  </body>
+</html>
