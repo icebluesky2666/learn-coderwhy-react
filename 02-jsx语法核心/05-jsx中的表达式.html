@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            isLogin: false,
+            firstName: 'Mr',
+            lastName: 'chen'
+          }
+        }
+
+        getFullName() {
+          return '我是小小石'
+        }
+
+        render() {
+          const { isLogin, firstName, lastName } = this.state
+          return (
+            <div>
+              {/* 1. 运算符表达式 */}
+              <div>{firstName + lastName}</div>
+              <div>{40 * 20}</div>
+
+              {/* 2. 三元表达式 */}
+              <div>{isLogin ? '你已经登录了' : '还未登录，请先登录哦～'}</div>
+
+              {/* 3. 函数调用 */}
+              <div>{this.getFullName()}</div>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

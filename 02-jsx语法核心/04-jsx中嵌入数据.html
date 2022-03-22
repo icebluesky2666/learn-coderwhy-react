@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            flag: true,
+
+            // 在{}中显示的数据
+            message: 'Hello World', // String
+            num: 10, // Number
+            arr1: [1, 2, 3, 4], // Array
+
+            // 在{}中不显示的数据
+            test1: null, // null
+            test2: undefined, // undefined
+            test3: false, // Boolean
+
+            // 在{}不能直接显示的数据
+            info: {
+              name: '小小石'
+            }
+          }
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>{this.state.message}</h2>
+              <h2>{this.state.num}</h2>
+              <h2>{this.state.arr1}</h2>
+              <h2>{this.state.test1}</h2>
+              <h2>{this.state.test2}</h2>
+              <h2>{this.state.test3}</h2>
+
+              <h2>{this.state.flag && '你好呀'}</h2>
+              <h2>{this.state.flag ? '你好呀' : null}</h2>
+
+              {/* 非要显示 */}
+              <h2>{this.state.test1 + ''}</h2>
+              <h2>{this.state.test2 + ''}</h2>
+              <h2>{this.state.test3.toString()}</h2>
+
+              {
+                // 直接报错
+                // <h2>{this.state.info}</h2>
+              }
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

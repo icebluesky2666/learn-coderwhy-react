@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor() {
+          super()
+          this.state = {
+            message: 'Hello World',
+            count: 0
+          }
+        }
+
+        // 处理运算操作
+        btnCurrentOperate(symbol) {
+          // 通过操作符判断
+          let count = this.state.count
+          switch (symbol) {
+            case '+':
+              count++
+              break
+            case '-':
+              count--
+              break
+          }
+          this.setState({
+            count
+          })
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>{this.state.message}</h2>
+              <h2>当前计数：{this.state.count}</h2>
+              <button onClick={this.btnCurrentOperate.bind(this, '+')}>+1</button>
+              <button onClick={() => this.btnCurrentOperate('-')}>-1</button>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor() {
+          super()
+          this.state = {
+            message: 'Hello World',
+            count: 0
+          }
+        }
+
+        // 处理运算操作
+        btnCurrentOperate(symbol) {
+          // 通过操作符判断
+          let count = this.state.count
+          switch (symbol) {
+            case '+':
+              count++
+              break
+            case '-':
+              count--
+              break
+          }
+          this.setState({
+            count
+          })
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>{this.state.message}</h2>
+              <h2>当前计数：{this.state.count}</h2>
+              <button onClick={this.btnCurrentOperate.bind(this, '+')}>+1</button>
+              <button onClick={() => this.btnCurrentOperate('-')}>-1</button>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>
