@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      // 1. jsx 本身其实是 React.createElement() 的语法糖
+      const messageDom = <h2>Hello React</h2>
+
+      // const messageDom2 = React.createElement('h2', null, 'Hello React2')
+
+      ReactDOM.render(messageDom, document.querySelector('#app'))
+      // ReactDOM.render(messageDom2, document.querySelector('#app'))
+    </script>
+
+    <!-- 直接使用 React.createElement 则不需要 babel 进行转换 -->
+    <script>
+      // const messageDom2 = React.createElement('h2', null, 'Hello React2')
+      // ReactDOM.render(messageDom2, document.querySelector('#app'))
+    </script>
+  </body>
+</html>
