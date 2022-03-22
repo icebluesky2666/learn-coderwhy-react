@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            message: 'Hello World',
+            title: '我是标题悬浮后的内容'
+          }
+
+          // 2. 在构造函数中绑定,单次绑定,多次使用
+          this.btnClick2 = this.btnClick.bind(this)
+        }
+
+        btnClick() {
+          console.log('点击成功', this)
+        }
+
+        // 3. 定义函数时,直接使用箭头函数,当函数内部找不到this,向上查找
+        btnClick3 = () => {
+          console.log('点击成功3', this)
+        }
+
+        render() {
+          // 解构赋值
+          const { title } = this.state
+          return (
+            <div>
+              <h2 title={title}>{this.state.message}</h2>
+              {
+                // 1. 使用bind绑定当前this(显示绑定)
+                <button onClick={this.btnClick.bind(this)}>按钮一</button>
+              }
+
+              <button onClick={this.btnClick2}>按钮二</button>
+
+              <button onClick={this.btnClick3}>按钮三</button>
+
+              {
+                // 4. 直接在绑定时使用箭头函数,在箭头函数中调用外部需要使用的函数(隐式绑定)
+                <button onClick={() => this.btnClick()}>按钮四</button>
+              }
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

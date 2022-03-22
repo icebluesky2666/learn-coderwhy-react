@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            isLogin: false
+          }
+        }
+
+        // 登录切换
+        changeLogin(isLogin) {
+          // 使用 setState 函数将会重新调用 render 函数
+          this.setState({
+            isLogin: !isLogin
+          })
+        }
+
+        render() {
+          const { isLogin } = this.state
+          const descDisplayValue = isLogin ? 'block' : 'none'
+          let welcome = null
+
+          // 1. 通过if判断
+          if (isLogin) {
+            welcome = '欢迎回来~'
+          } else {
+            welcome = '请先登录!!!'
+          }
+
+          console.log(isLogin)
+
+          return (
+            <div>
+              <h2>{welcome}</h2>
+              <button onClick={() => this.changeLogin(isLogin)}>{isLogin ? '退出' : '登录'}</button>
+
+              <hr />
+
+              {
+                // (v-if)逻辑与: 当前面的条件成功,执行后面的表达式
+              }
+              {isLogin && <h2>你好呀小小石</h2>}
+
+              {
+                // (v-show)使用 display: none
+              }
+              <h2 style={{ display: descDisplayValue }}>你好呀小小石</h2>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

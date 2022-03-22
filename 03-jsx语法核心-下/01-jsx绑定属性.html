@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            message: 'Hello World',
+            title: '我是标题悬浮后的内容',
+            imgUrl: 'https://p2.music.126.net/STC6ODx0RTofJjdud2kj2Q==/109951166585192799.jpg',
+            link: 'http://www.baidu.com',
+            active: true
+          }
+        }
+
+        // 获取指定大小的图片地址
+        getSizeImage(url, size) {
+          return `${url}?param=${size}x${size}`
+        }
+
+        render() {
+          // 解构赋值
+          const { title, imgUrl, active, link } = this.state
+          return (
+            <div>
+              {/* 1. 绑定普通属性 */}
+              <h2 title={title}>{this.state.message}</h2>
+              <img src={this.getSizeImage(imgUrl, 150)} alt="" />
+              <div>
+                <a href={link} target="_blank">
+                  百度一下
+                </a>
+              </div>
+
+              {
+                // 2. 绑定class属性
+                // 不能直接使用class,虽然会被绑定到DOM元素上,但是会有Wraning信息,因为class为关键字信息
+                // jsx中可以直接使用"className"绑定类属性,底层将帮你处理
+              }
+              <div className="box title">我是一个div元素</div>
+              <div className={'box title ' + (active && 'active')}>我也是一个div元素</div>
+              {
+                // label中的"for"使用"htmlFor"代替
+              }
+              <label htmlFor=""></label>
+
+              {/* 3. 绑定 style 样式 */}
+              <div style={{ color: 'red', fontSize: '20px' }}>我是div元素，我绑定了style属性</div>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

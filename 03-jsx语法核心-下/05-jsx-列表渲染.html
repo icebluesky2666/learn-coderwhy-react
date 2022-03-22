@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            names: ['chen', 'xiao', 'yao', 'zhang', 'he'],
+            numbers: [1, 2, 20, 50, 90, 100]
+          }
+        }
+
+        render() {
+          const { names, numbers } = this.state
+
+          return (
+            <div>
+              <h2>名称列表</h2>
+              <ul>
+                {names.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+
+              <h2>数字列表:渲染大于等于50的数字</h2>
+              <ul>
+                {numbers
+                  .filter((item) => item >= 50)
+                  .map((num) => (
+                    <li>{num}</li>
+                  ))}
+              </ul>
+
+              <h2>数字列表:展示前4条数据</h2>
+              <ul>
+                {numbers.slice(0, 4).map((num) => (
+                  <li>{num}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>
