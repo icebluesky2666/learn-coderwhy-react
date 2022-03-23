@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.nav-item {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.nav-left,
+.nav-right {
+  width: 80px;
+  background-color: skyblue;
+}
+
+.nav-center {
+  flex: 1;
+  background-color: bisque;
+}
