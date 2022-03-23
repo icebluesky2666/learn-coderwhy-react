@@ -72,3 +72,11 @@ render 函数的返回值
 3. Portals：可以渲染子节点到不同的 DOM 子树中
 4. 字符串 或 数值 类型：它们在 DOM 中会被渲染为文本节点
 5. 布尔类型 或 null：什么都不渲染
+
+## 生命周期函数
+
+1. constructor：组件创建时触发
+2. render：组件渲染时触发
+3. componentDidMout：组件挂载后触发
+4. componentDidUpdate：组件更新时触发-setState() forceState()
+5. componentWillUnmount：组件销毁时触发
