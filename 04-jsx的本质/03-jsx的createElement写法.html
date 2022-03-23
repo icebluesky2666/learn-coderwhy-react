@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            message: 'Hello World'
+          }
+        }
+
+        render() {
+          const reactElement = React.createElement(
+            'div',
+            null,
+            /*#__PURE__*/ React.createElement(
+              'div',
+              {
+                className: 'header'
+              },
+              /*#__PURE__*/ React.createElement('h2', null, '\u6211\u662F\u6807\u9898\u4FE1\u606F')
+            ),
+            /*#__PURE__*/ React.createElement(
+              'div',
+              {
+                className: 'content'
+              },
+              /*#__PURE__*/ React.createElement('h2', null, '\u6211\u662F\u5185\u5BB9\u4FE1\u606F'),
+              /*#__PURE__*/ React.createElement('button', null, '\u6309\u94AE')
+            ),
+            /*#__PURE__*/ React.createElement(
+              'div',
+              {
+                className: 'footer'
+              },
+              /*#__PURE__*/ React.createElement('h2', null, ' \u6211\u662F\u5C3E\u90E8\u4FE1\u606F')
+            )
+          )
+
+          // (虚拟DOM)reactElement-对象树
+          console.log(reactElement)
+
+          return reactElement
+        }
+      }
+
+      // (真实DOM)将对象树映射到真实DOM上
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>

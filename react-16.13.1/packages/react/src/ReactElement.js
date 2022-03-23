@@ -383,6 +383,7 @@ export function createElement(type, config, children) {
 
   // Children can be more than one argument, and those are transferred onto
   // the newly allocated props object.
+  // 在这里判断还有没有后续的children参数需要处理了,使用arguments变量获取
   const childrenLength = arguments.length - 2;
   if (childrenLength === 1) {
     props.children = children;
