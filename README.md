@@ -82,3 +82,5 @@ render 函数的返回值
 5. componentWillUnmount：组件销毁时触发
 
 ## 通信
+
+类组件通过 this.props 直接获取，在组件标签中传入 属性名称={属性值} 的方式

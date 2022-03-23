@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 class ChildCpn extends Component {
   // constructor(props) {
-  //   // 这一步在 ReactBaseClasses 中的 Component 函数已经帮我们做过了
+  //   // 这一步在 ReactBaseClasses 中的 Component 函数已经默认帮我们做过了
   //   super(props)
-  //   this.props = props
+
+  //   setTimeout(() => {
+  //     console.log(this.props)
+  //   }, 0)
   // }
 
   render() {
