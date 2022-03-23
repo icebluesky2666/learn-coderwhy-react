@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid #eee;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #eee;
+        padding: 10px 16px;
+        text-align: center;
+      }
+
+      th {
+        color: #045c72;
+        background-color: #e7e7e7;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            message: 'Hello World',
+            cloumns: ['序号', '书籍名称', '出版日期', '单价', '购买价格', '购买数量', '操作'],
+            tableData: [
+              {
+                id: 1,
+                name: '《算法导论》',
+                publishTime: '2006-09',
+                price: 85,
+                num: 2
+              },
+              {
+                id: 2,
+                name: '《算法导论2》',
+                publishTime: '2006-10',
+                price: 185,
+                num: 1
+              },
+              {
+                id: 3,
+                name: '《UNIX编程艺术》',
+                publishTime: '2006-02',
+                price: 59,
+                num: 1
+              },
+              {
+                id: 4,
+                name: '《代码大全》',
+                publishTime: '2006-03',
+                price: 128,
+                num: 1
+              }
+            ]
+          }
+        }
+
+        // 渲染书籍列表
+        renderBooks() {
+          const { cloumns, tableData } = this.state
+          return (
+            <div>
+              <table>
+                {
+                  // 表头
+                }
+                <thead>
+                  <tr>
+                    {cloumns.map((item, index) => (
+                      <th key={index}>{item}</th>
+                    ))}
+                  </tr>
+                </thead>
+
+                {
+                  // 内容
+                }
+                <tbody>
+                  {tableData.map((item, index) => {
+                    const { id, name, publishTime, price, num } = item
+                    return (
+                      <tr key={name}>
+                        <td>{index + 1}</td>
+                        <td>{name}</td>
+                        <td>{publishTime}</td>
+                        <td>{this.formatPrice(price)}</td>
+                        <td>{this.formatPrice(price, num)}</td>
+                        <td>
+                          <button onClick={() => this.setBookNumOperate(id, '-')} disabled={num <= 1}>
+                            -
+                          </button>
+                          {` ${num} `}
+                          <button onClick={() => this.setBookNumOperate(id, '+')}>+</button>
+                        </td>
+                        <td>
+                          <button onClick={() => this.delBook(id)}>移除</button>
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+
+              <h2>总价格：{this.getAllPrice()}</h2>
+            </div>
+          )
+        }
+
+        // 渲染空列表提示
+        renderEmptyTip() {
+          return <h2>书籍列表为空～</h2>
+        }
+
+        render() {
+          return this.state.tableData.length ? this.renderBooks() : this.renderEmptyTip()
+        }
+
+        // 格式化价格: 保留两位小数
+        formatPrice(price, num = 1) {
+          // 处理字符串转换以及 NaN
+          return '¥' + (price * num || 0).toFixed(2)
+        }
+
+        // 获取总价
+        getAllPrice() {
+          return this.formatPrice(
+            this.state.tableData.reduce((accumulator, cur) => {
+              return accumulator + cur.price * cur.num
+            }, 0)
+          )
+        }
+
+        // 增加/减少某本书籍的数量
+        setBookNumOperate(id, symbol) {
+          // 过滤特殊操作符
+          if (!['-', '+'].includes(symbol)) {
+            console.log(`操作符: ${symbol} 暂不支持`)
+            return null
+          }
+          // const list = this.state.tableData.filter(() => true)
+          const list = [...this.state.tableData]
+          const item = list.find((e) => e.id === id)
+          if (!item) {
+            console.log(`未找到id为 ${id} 的书籍`)
+            return null
+          }
+          if (symbol === '-') {
+            item.num--
+          } else {
+            item.num++
+          }
+          // 更新 render 函数,重新渲染视图显示
+          this.setState({
+            tableData: list
+          })
+        }
+
+        // 删除某本书籍
+        delBook(id) {
+          // 需要遵循React中state不可变性,我们使用filter返回一个新数组
+          const list = this.state.tableData.filter(() => true)
+          const index = list.findIndex((e) => e.id === id)
+          if (index === -1) {
+            console.log(`未找到id为 ${id} 的书籍`)
+            return null
+          }
+          list.splice(index, 1)
+          this.setState({
+            tableData: list
+          })
+        }
+      }
+
+      ReactDOM.render(<App />, document.querySelector('#app'))
+    </script>
+  </body>
+</html>
