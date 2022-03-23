@@ -80,3 +80,5 @@ render 函数的返回值
 3. componentDidMout：组件挂载后触发
 4. componentDidUpdate：组件更新时触发-setState() forceState()
 5. componentWillUnmount：组件销毁时触发
+
+## 通信
