@@ -26,7 +26,7 @@ yarn start
 
 PWD：全称为 progressive web app，即为渐进式 WEB 应用，这种 Web 存在的形式，我们也称之为 Web App
 
-PWA 解决了哪些问题？
+**PWA 解决了哪些问题？**
 
 1. 可以添加至主屏幕，点击主屏幕可以实现启动动画以及隐藏地址栏
 2. 实现离线缓存功能，即使用户手机没有网络，依然可以使用一些离线功能
@@ -54,18 +54,18 @@ yarn.lock // 依赖库的确定版本信息
 
 ## 组件化开发
 
-类组件的定义要求：
+**类组件的定义要求：**
 
 1. 组件的名称必须是大写开头(不管是类组件还是函数组件都是如此)
 2. 组件必须继承自 React.Component
 3. 类组件必须实现 render 函数(用于渲染 DOM)
 
-函数式组件特点
+**函数式组件特点**
 
 1. 没有 this 对象
 2. 没有内部的状态(state)
 
-render 函数的返回值
+**render 函数的返回值**
 
 1. React 元素(通常是通过 JSX 创建)
 2. 数组 或 fragments
@@ -89,10 +89,14 @@ React.createContext({}) 创建一个 context 用于数据共享
 
 ## setState
 
-是否为异步函数？分成两种情况，React 会更新内部上下文情况选择
+**是否为异步函数？分成两种情况，React 会更新内部上下文情况选择**
 
 1. 异步：在组件生命周期或 React 合成事件(onClick...)中，setState 是异步的
 2. 同步：在 setTimeout 或者原生 DOM 事件中，setState 是同步的
+
+**为什么规定传入的数据需要是不可变的？**
+
+1. 因为 React 在更新视图时如果发现 shouldComponentUpdate 函数或者该组件继承于 PureComponent 内部将会有一个 props/state 的浅层比较用于决定是否重新执行 render 函数，又 JS 引用类型的特性，如果直接更改了数据然后进行 setState 的话，那么此时的 newState 与 prevState 引用地址将相等，导致组件不能正常进行更新
 
 ## diff
 
