@@ -84,3 +84,12 @@ render 函数的返回值
 ## 通信
 
 类组件通过 this.props 直接获取，在组件标签中传入 属性名称={属性值} 的方式
+
+React.createContext({}) 创建一个 context 用于数据共享
+
+## setState
+
+是否为异步函数？分成两种情况
+
+1. 异步：在组件生命周期或 React 合成事件(onClick...)中，setState 是异步的
+2. 同步：在 setTimeout 或者原生 DOM 事件中，setState 是同步的

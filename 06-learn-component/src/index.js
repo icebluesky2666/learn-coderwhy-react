@@ -13,6 +13,8 @@ import ReactDOM from 'react-dom'
 // import App from './06-跨组件通信/01-props-层层传递'
 // import App from './06-跨组件通信/02-context-共享'
 // import App from './06-跨组件通信/03-context-函数组件'
-import App from './06-跨组件通信/04-context-多个context'
+// import App from './06-跨组件通信/04-context-多个context'
+// import App from './07-setState详解/01-为什么要使用setState'
+import App from './07-setState详解/02-setState-异步更新'
 
 ReactDOM.render(<App />, document.querySelector('#root'))
