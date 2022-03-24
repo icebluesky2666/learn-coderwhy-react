@@ -135,7 +135,12 @@ import EventBus from 'events'
 const eventEmitter = new EventBus.EventEmitter()
 
 // 监听
+eventEmitter.addListener('[事件名称-string/symbol]', '[事件处理函数-function]')
 eventEmitter.on('[事件名称-string/symbol]', '[事件处理函数-function]')
+
+// 卸载
+eventEmitter.removeListener('[事件名称-string/symbol]', '[事件处理函数-function]')
+eventEmitter.off('[事件名称-string/symbol]', '[事件处理函数-function]')
 
 // 事件触发
 eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
