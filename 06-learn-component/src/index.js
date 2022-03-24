@@ -19,6 +19,7 @@ import ReactDOM from 'react-dom'
 // import App from './07-setState详解/03-setState-数据的合并-assign'
 // import App from './08-性能优化/01-组件嵌套的render调用'
 // import App from './08-性能优化/02-通过-shouldComponentUpdate-阻断render'
-import App from './08-性能优化/03-函数组件优化-memo'
+// import App from './08-性能优化/03-函数组件优化-memo'
+import App from './09-知识补充/01-事件总线'
 
 ReactDOM.render(<App />, document.querySelector('#root'))

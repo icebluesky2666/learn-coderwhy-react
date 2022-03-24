@@ -115,3 +115,28 @@ React.createContext({}) 创建一个 context 用于数据共享
 1. 如果组件内实现了 shouldComponentUpdate 函数，将根据其返回值来决定是否更新 render 函数(需要注意的是，官网中写道：后续该函数可能被视为不是严格的指令，并且，当返回 flase 时，仍然可能导致组件重新渲染)
 2. 通过 PureComponent 继承的组件可以自动判断 props/state 变更，从而是否需要更新 render 函数(浅层比较-对象属性长度-对象属性是否相等-对象属性值是否相等)
 3. 前面两个都是关于类组件的，那如果是函数组件呢？可以使用 React 内置的 memo 函数返回一个新的函数组件来自己自动判断
+
+## 事件总线 BUS
+
+安装
+
+```shell
+yarn add events
+```
+
+初始化使用说明
+
+```JavaScript
+// 导入
+import EventBus from 'events'
+
+
+// 创建事件对象
+const eventEmitter = new EventBus.EventEmitter()
+
+// 监听
+eventEmitter.on('[事件名称-string/symbol]', '[事件处理函数-function]')
+
+// 事件触发
+eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
+```
