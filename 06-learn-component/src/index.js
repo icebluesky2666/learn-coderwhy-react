@@ -16,6 +16,9 @@ import ReactDOM from 'react-dom'
 // import App from './06-跨组件通信/04-context-多个context'
 // import App from './07-setState详解/01-为什么要使用setState'
 // import App from './07-setState详解/02-setState-异步更新'
-import App from './07-setState详解/03-setState-数据的合并-assign'
+// import App from './07-setState详解/03-setState-数据的合并-assign'
+// import App from './08-性能优化/01-组件嵌套的render调用'
+// import App from './08-性能优化/02-通过-shouldComponentUpdate-阻断render'
+import App from './08-性能优化/03-函数组件优化-memo'
 
 ReactDOM.render(<App />, document.querySelector('#root'))
