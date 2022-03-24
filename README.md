@@ -145,3 +145,10 @@ eventEmitter.off('[事件名称-string/symbol]', '[事件处理函数-function]'
 // 事件触发
 eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 ```
+
+## refs
+
+1. 字符串：调用的时候直接使用 this.refs.ref 定义名称
+2. 对象：调用的时候需要 .current 才能拿到 DOM 元素
+3. 回调函数：直接可以获取到 DOM 元素
+4. 组件中绑定可以获取一个 ref 对象，这个对象 .current 可以拿到内部组件属性、方法等等...
