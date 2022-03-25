@@ -25,6 +25,9 @@ import ReactDOM from 'react-dom'
 // import App from './10-受控组件和非受控组件/01-受控组件的基本演练'
 // import App from './10-受控组件和非受控组件/02-受控组件-selected'
 // import App from './10-受控组件和非受控组件/03-受控组件-多输入'
-import App from './10-受控组件和非受控组件/04-非受控组件'
+// import App from './10-受控组件和非受控组件/04-非受控组件'
+// import App from './11-高阶组件/01-高阶组件的定义'
+// import App from './11-高阶组件/02-高阶组件-props增强'
+import App from './11-高阶组件/03-高阶组件混合-context-演练'
 
 ReactDOM.render(<App />, document.querySelector('#root'))
