@@ -24,6 +24,7 @@ import ReactDOM from 'react-dom'
 // import App from './09-知识补充/02-refs-使用'
 // import App from './10-受控组件和非受控组件/01-受控组件的基本演练'
 // import App from './10-受控组件和非受控组件/02-受控组件-selected'
-import App from './10-受控组件和非受控组件/03-受控组件-多输入'
+// import App from './10-受控组件和非受控组件/03-受控组件-多输入'
+import App from './10-受控组件和非受控组件/04-非受控组件'
 
 ReactDOM.render(<App />, document.querySelector('#root'))
