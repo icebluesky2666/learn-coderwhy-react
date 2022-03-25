@@ -21,6 +21,9 @@ import ReactDOM from 'react-dom'
 // import App from './08-性能优化/02-通过-shouldComponentUpdate-阻断render'
 // import App from './08-性能优化/03-函数组件优化-memo'
 // import App from './09-知识补充/01-事件总线'
-import App from './09-知识补充/02-refs-使用'
+// import App from './09-知识补充/02-refs-使用'
+// import App from './10-受控组件和非受控组件/01-受控组件的基本演练'
+// import App from './10-受控组件和非受控组件/02-受控组件-selected'
+import App from './10-受控组件和非受控组件/03-受控组件-多输入'
 
 ReactDOM.render(<App />, document.querySelector('#root'))
