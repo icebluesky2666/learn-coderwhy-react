@@ -1,6 +1,6 @@
 import React, { PureComponent, createContext } from 'react'
 
-// 创建组件共享 Context
+// 创建一个组件共享 Context
 const UserContext = createContext({
   name: '-',
   age: 0,
@@ -47,7 +47,7 @@ export default class App extends PureComponent {
     this.state = {
       name: '小小石',
       age: 20,
-      sex: '女'
+      sex: '男'
     }
   }
 
