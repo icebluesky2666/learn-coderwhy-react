@@ -163,3 +163,11 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 1. 接收一个组件作为参数
 2. 返回一个组件
 3. (组件劫持)可以在这个组件被渲染前做一些事情(props 增强)
+
+## StrictMode(组件的严格模式)
+
+1. 检测不安全的生命周期函数
+2. 检测过时的 ref API
+3. 检测意外的副作用(constructor 会在开发模式下调用两次)
+4. 检测废弃的 findDomNode() 方法
+5. 检测过时的 context API
