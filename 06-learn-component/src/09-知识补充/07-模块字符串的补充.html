@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const name = '小小石'
+      const age = 18
+
+      function test(...args) {
+        console.log(args)
+      }
+
+      function test2(arg) {
+        console.log(arg)
+      }
+
+      // 标签模版字符串
+      // 第一组测试
+      test`你好呀`
+      test2`你好呀`
+
+      console.log('——————-——————分隔符——————-——————')
+
+      // 第二组测试
+      test`my name is ${name}, age is ${age}`
+      test2`my name is ${name}, age is ${age}`
+    </script>
+  </body>
+</html>

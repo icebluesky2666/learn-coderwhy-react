@@ -187,3 +187,13 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 2. 某些样式没有提示信息
 3. 大量的样式，可能会导致代码混乱
 4. 某些样式无法编写(比如伪类/伪元素)
+
+**CSS in JS**
+
+- styled-components
+- emotion
+- glamorous
+
+```shell
+pnpm install styled-components
+```
