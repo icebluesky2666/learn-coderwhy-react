@@ -10,7 +10,7 @@ npm install -g create-react-app
 
 若提示`Error: EACCES: permission denied`需要提升权限，使用 sudo
 
-## 创建 React 项目
+## 创建 React 项目(create-react-app: CRA)
 
 注：项目名称不能包含大写字母
 
@@ -20,6 +20,9 @@ create-react-app 项目名称
 create-react-app 05-learn-scaffold
 cd ./05-learn-scaffold
 yarn start
+
+# 暴露 webpack 隐藏的配置信息
+yarn run eject
 ```
 
 ## 目录说明
@@ -195,5 +198,58 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 - glamorous
 
 ```shell
+# 用啥都行 npm | yarn | cnpm ... 看你有啥
 pnpm install styled-components
+```
+
+**Ant Design**
+
+1. 兼容性
+
+- 现代浏览器和 IE11(polyfills)
+- 支持服务端渲染
+- Electron
+
+2. 安装&使用
+
+```shell
+# ant
+pnpm install antd
+
+# icons
+pnpm install @ant-design/icons
+```
+
+```javaScript
+// index.js: 入口文件,保证所有地方都能使用
+// 导入样式
+import 'antd/dist/antd.css'
+
+// 其它.js: 使用
+import { Button, Space } from 'antd'
+import { PoweroffOutlined } from '@ant-design/icons'
+```
+
+3. tree shaking 概念的引用
+
+可以选择使用的组件进行按需加载，打包时会将未使用的代码/组件进行去除，减少打包体积
+
+4. 更改 antd 主题配置
+
+- react-app-rewired + customize-cra(早期推荐的方案,已经比较久了)
+- craco (目前推荐的方案-我的版本-v4)
+
+```shell
+pnpm install @craco/craco
+
+# 安装完后,需要修改 package.json 启动方式
+"scripts": {
+  "start": "craco start",
+  "build": "craco build",
+  "test": "craco test",
+  "eject": "react-scripts eject"
+},
+
+# 烦人的警告信息,可以添加 GENERATE_SOURCEMAP=false 去除
+"start": "GENERATE_SOURCEMAP=false craco start"
 ```
