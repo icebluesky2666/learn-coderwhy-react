@@ -1,4 +1,8 @@
+const path = require('path')
 const CracoLessPlugin = require('craco-less')
+
+// 绝对文件路径拼接
+const resolve = (dir) => path.resolve(__dirname, dir)
 
 module.exports = {
   plugins: [
@@ -16,5 +20,12 @@ module.exports = {
         }
       }
     }
-  ]
+  ],
+  webpack: {
+    // 别名配置
+    alias: {
+      '@': resolve('src'),
+      components: resolve('src/components')
+    }
+  }
 }
