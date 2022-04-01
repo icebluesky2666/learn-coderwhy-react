@@ -242,14 +242,45 @@ import { PoweroffOutlined } from '@ant-design/icons'
 ```shell
 pnpm install @craco/craco
 
-# 安装完后,需要修改 package.json 启动方式
+# 安装完后,需要修改一些信息
+# package.json
 "scripts": {
-  "start": "craco start",
-  "build": "craco build",
-  "test": "craco test",
-  "eject": "react-scripts eject"
-},
+-   "start": "react-scripts start",
+-   "build": "react-scripts build",
+-   "test": "react-scripts test",
++   "start": "craco start",
++   "build": "craco build",
++   "test": "craco test",
+}
 
 # 烦人的警告信息,可以添加 GENERATE_SOURCEMAP=false 去除
 "start": "GENERATE_SOURCEMAP=false craco start"
+
+# 安装 craco-less 来帮助加载 less 样式以及修改变量
+pnpm install craco-less
+```
+
+```javascript
+// craco.config.js
+const CracoLessPlugin = require('craco-less')
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoLessPlugin,
+      // TIP: 第一次敲成了 option 记得加 s 哦~
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            modifyVars: {
+              // @primary-color 是 antd 暴露的变量名称,我们修改为绿色
+              '@primary-color': '#1DA57A'
+            },
+            javascriptEnabled: true
+          }
+        }
+      }
+    }
+  ]
+}
 ```

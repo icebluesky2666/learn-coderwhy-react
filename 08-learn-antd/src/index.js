@@ -3,7 +3,8 @@ import React from 'react'
 import reactDOM from 'react-dom/client'
 
 // 导入 antd 的 css 样式
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
+import 'antd/dist/antd.less'
 
 // import App from './01-react-class-添加'
 import App from './App'
