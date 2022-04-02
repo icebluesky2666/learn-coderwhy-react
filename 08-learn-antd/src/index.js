@@ -7,7 +7,8 @@ import reactDOM from 'react-dom/client'
 import 'antd/dist/antd.less'
 
 // import App from './01-react-class-添加'
-import App from './App'
+// import App from './components/App'
+import App from './comment/App'
 
 // 其实简单看了下,就是获取的这个根元素将不在render函数中进行传递存储
 const root = reactDOM.createRoot(document.querySelector('#root'))

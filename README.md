@@ -284,3 +284,13 @@ module.exports = {
   ]
 }
 ```
+
+5. 日期处理插件 moment
+
+```shell
+# 安装
+pnpm install moment
+
+# 使用
+
+```
