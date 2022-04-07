@@ -352,6 +352,7 @@ yarn add react-transition-group
   - 一: 开始状态 appear, enter, exit
   - 二: 执行动画 appear-active, enter-active, exit-active
   - 三: 结束动画 appear-done, enter-done, exit-done
+  - enter 用于显示, exit 用于隐藏, appear 用于默认显示首次的动画
 
 - SwitchTransition: 通常用于两个组件显示与隐藏切换时
 - TransitionGroup: 将多个动画组件包裹其中, 通常用于列表中元素的动画

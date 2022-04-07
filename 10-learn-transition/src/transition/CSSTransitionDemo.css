@@ -4,7 +4,8 @@
 }
 
 /* 显示 */
-.card-enter {
+.card-enter,
+.card-appear {
   opacity: 0;
   transform: scale(0.6);
 }
@@ -27,5 +28,7 @@
 }
 .card-exit-done {
   opacity: 0;
-  transform: scale(0.6);
+  /* 如果在 CSSTransition 组件上添加 unmountOnExit={true} 属性则不需要下面代码 */
+  /* 因为会将该组件完全卸载掉(DOM) */
+  /* transform: scale(0.6); */
 }

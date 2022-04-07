@@ -21,7 +21,19 @@ export default class CSSTransitionDemo extends PureComponent {
         <button style={{ marginBottom: '20px' }} onClick={() => this.setState({ isShow: !isShow })}>
           显示/隐藏
         </button>
-        <CSSTransition classNames="card" in={isShow} timeout={300}>
+        <CSSTransition
+          classNames="card"
+          in={isShow}
+          timeout={300}
+          unmountOnExit={true}
+          appear
+          onEnter={(el) => console.log('开始进入')}
+          onEntering={(el) => console.log('正在进入')}
+          onEntered={(el) => console.log('进入完成')}
+          onExit={(el) => console.log('开始退出')}
+          onExiting={(el) => console.log('正在退出')}
+          onExited={(el) => console.log('退出完成')}
+        >
           <Card
             className="card-box"
             style={{ width: 300 }}
