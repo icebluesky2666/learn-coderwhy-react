@@ -25,6 +25,7 @@ export default class MomentUse extends Component {
         <h3>moment的基本使用</h3>
         <p>最基本的使用：{moment().format()}</p>
         <p>{moment().format('YYYY-MM-DD HH:mm:ss.SSS')}</p>
+        <p>{moment().fromNow()}</p>
         <p>{moment().toNow()}</p>
       </div>
     )

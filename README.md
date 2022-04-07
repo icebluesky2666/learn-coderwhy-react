@@ -199,7 +199,7 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 
 ```shell
 # 用啥都行 npm | yarn | cnpm ... 看你有啥
-pnpm install styled-components
+yarn add styled-components
 ```
 
 **Ant Design**
@@ -214,10 +214,10 @@ pnpm install styled-components
 
 ```shell
 # ant
-pnpm install antd
+yarn add antd
 
 # icons
-pnpm install @ant-design/icons
+yarn add @ant-design/icons
 ```
 
 ```javaScript
@@ -240,7 +240,7 @@ import { PoweroffOutlined } from '@ant-design/icons'
 - craco (目前推荐的方案-我的版本-v4)
 
 ```shell
-pnpm install @craco/craco
+yarn add @craco/craco
 
 # 安装完后,需要修改一些信息
 # package.json
@@ -257,7 +257,7 @@ pnpm install @craco/craco
 "start": "GENERATE_SOURCEMAP=false craco start"
 
 # 安装 craco-less 来帮助加载 less 样式以及修改变量
-pnpm install craco-less
+yarn add craco-less
 ```
 
 ```javascript
@@ -289,8 +289,45 @@ module.exports = {
 
 ```shell
 # 安装
-pnpm install moment
+yarn add moment
+```
 
-# 使用
+```javascript
+// 使用
+import moment from 'moment'
 
+moment().format() // 2022-04-07T14:03:28+08:00
+moment().format('YYYY-MM-DD HH:mm:ss.SSS') // 2022-04-07 14:03:28.738
+moment().fromNow() // a few seconds ago
+moment().toNow() // a few seconds ago
+```
+
+## 网络请求
+
+1. 传统 Ajax: 基于 XHR(XMLHttpRequest) 封装的
+
+- 缺点: 配置和调用方式比较混乱(创建 XML 对象、判断浏览器、处理响应信息、手动绑定事件)
+
+2. JQuery-Ajax
+
+- 优点: 相对于传统 Ajax 来说非常好用
+- 缺点: 使用 Ajax 需要引入 JQuery 整个包, 比较不合理(采取个性化打包方案又不能享受 CDN 服务)
+
+3. Fetch API [MDN 学习地址](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+
+- 优点: Ajax 替换方案, 基于 Promise 设计, 可定制化强
+- 缺点: 需要明确 Fetch 是一个比较 low-level(底层) 的 API, 没有给你封装好各式各样的功能与实现, 大部分功能需要自己实现
+- ——发送网络请求需要自己配置 Header 的 Content-Type
+- ——错误处理相对麻烦(只有网络错误才会 reject, HTTP 状态码 404 或者 500 不会被标记 reject)
+- ——不支持取消请求, 没法查看请求的进度
+
+4. axios: 目前前端使用比较广泛的网络请求库, 包括 Vue 作者也是推荐在 Vue 中使用 axios
+
+- 优点: 在浏览器中发送 XMLHttpRequests 请求
+- 优点：可以直接在 Node.js 中使用
+- 优点：支持 Promise API、取消请求、拦截请求&响应、转换请求&响应数据
+
+```shell
+# 安装
+yarn add axios
 ```
