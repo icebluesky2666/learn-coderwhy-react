@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CSSTransitionDemo from './transition/CSSTransitionDemo'
-
+import SwitchTransitionDemo from './transition/SwitchTransitionDemo'
+// import CSSTransitionDemo from './transition/CSSTransitionDemo'
 export default class App extends Component {
   componentDidMount() {
     console.log('App 组件挂载成功')
@@ -10,7 +10,8 @@ export default class App extends Component {
     return (
       <div>
         <h2>React App Template</h2>
-        <CSSTransitionDemo />
+        {/* <CSSTransitionDemo /> */}
+        <SwitchTransitionDemo />
       </div>
     )
   }

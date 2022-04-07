@@ -347,12 +347,16 @@ yarn add react-transition-group
 主要提供的四个组件:
 
 - Transition
-- CSSTransition: 基于 Transition 组件构建, in 属性绑定显示隐藏, timeout 属性绑定延时时间, 执行过程中有三个状态
+- CSSTransition: 基于 Transition 组件构建, in 属性绑定显示隐藏, timeout 属性绑定延时时间(添加类的事件), 执行过程中有三个状态
 
   - 一: 开始状态 appear, enter, exit
   - 二: 执行动画 appear-active, enter-active, exit-active
   - 三: 结束动画 appear-done, enter-done, exit-done
   - enter 用于显示, exit 用于隐藏, appear 用于默认显示首次的动画
 
-- SwitchTransition: 通常用于两个组件显示与隐藏切换时
+- SwitchTransition: 通常用于两个组件显示与隐藏切换, 需要结合 CSSTransition 组件使用, mode 说明
+
+  - out-in: 先隐藏, 在显示
+  - in-out: 右侧展示, 向左侧偏移然后替换的动画
+
 - TransitionGroup: 将多个动画组件包裹其中, 通常用于列表中元素的动画
