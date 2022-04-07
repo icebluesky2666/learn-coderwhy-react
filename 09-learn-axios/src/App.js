@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import request from './service/request'
 
 export default class App extends Component {
   componentDidMount() {
@@ -9,7 +10,8 @@ export default class App extends Component {
     // this.reqGet()
     // this.reqPost()
     // this.reqUserInfo({ name: 'chen' })
-    this.reqAllUserInfo({ name: '小小石' })
+    // this.reqAllUserInfo({ name: '小小石' })
+    this.reqMineAxios()
   }
 
   // GET
@@ -106,6 +108,11 @@ export default class App extends Component {
         return err
       }
     )
+  }
+
+  // 使用自己封装的 axios 请求
+  reqMineAxios() {
+    request.get('/get', { params: { name: '111' } }).then(console.log)
   }
 
   render() {
