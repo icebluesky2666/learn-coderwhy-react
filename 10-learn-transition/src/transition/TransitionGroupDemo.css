@@ -1,0 +1,36 @@
+.item-box {
+  /*  */
+  width: fit-content;
+  /* transition: opacity 300ms, transform 300ms; */
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* 显示 */
+.item-enter,
+.item-appear {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* .item-enter-done {
+  opacity: 1;
+} */
+
+/* 隐藏 */
+.item-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.item-exit-active {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.item-exit-done {
+  opacity: 0;
+  /* 如果在 CSSTransition 组件上添加 unmountOnExit={true} 属性则不需要下面代码 */
+  /* 因为会将该组件完全卸载掉(DOM) */
+  /* transform: scale(0.6); */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root">
+      <div class="btn-box">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+      </div>
+    </div>
+
+    <script>
+      // 激活元素下标: 默认 -1 表示无
+      let curIndex = -1
+      const btnBoxDom = document.querySelector('.btn-box')
+      const btns = btnBoxDom.querySelectorAll('button')
+
+      // 给按钮们设置自定义属性,用于获取下标
+      btns.forEach((el, index) => el.setAttribute('data-index', index))
+
+      // 绑定点击事件: 给父元素绑定即可,利用事件冒泡的特性去拿到触发点击的元素
+      btnBoxDom.onclick = function (event) {
+        const elementDom = event.target
+        console.log(elementDom)
+        // 过滤掉除按钮以外的点击
+        if (elementDom.tagName !== 'BUTTON') {
+          console.log('不是按钮点击哦')
+          return
+        }
+        // 先重置上一次点击按钮的样式,判断是否存在,存在则清除样式
+        if (curIndex !== -1) {
+          btns[curIndex].style.backgroundColor = ''
+        }
+        // 获取点击按钮的下标(自定义属性拿)并保存,用于下次清除样式
+        curIndex = elementDom.dataset['index'] || -1
+        btns[curIndex].style.backgroundColor = 'pink'
+      }
+    </script>
+  </body>
+</html>

@@ -323,7 +323,7 @@ moment().toNow() // a few seconds ago
 
 4. axios: 目前前端使用比较广泛的网络请求库, 包括 Vue 作者也是推荐在 Vue 中使用 axios
 
-- 优点: 在浏览器中发送 XMLHttpRequests 请求
+- 优点: 在浏览器中发送 XMLHttpRequest 请求
 - 优点：可以直接在 Node.js 中使用
 - 优点：支持 Promise API、取消请求、拦截请求&响应、转换请求&响应数据
 
