@@ -331,3 +331,27 @@ moment().toNow() // a few seconds ago
 # 安装
 yarn add axios
 ```
+
+具体演示代码查看 09-learn-axios/ 目录
+
+## React 中的过渡动画
+
+用于给某个组件添加显示与消失的过渡动画, 目的是为了增加用户体验(Vue 内部组件自带了)
+
+当然, 我们可以选择使用原生 CSS 的方式来实现这些过渡动画, 不过 React 社区已经为我们提供了 react-transition-group 库用于完成过渡动画了, 再写一遍就有显得有点多余了, 不过这个库需要我们额外安装, 但是该包体积较小, 不会对项目造成较大的负担
+
+```shell
+yarn add react-transition-group
+```
+
+主要提供的四个组件:
+
+- Transition
+- CSSTransition: 基于 Transition 组件构建, in 属性绑定显示隐藏, timeout 属性绑定延时时间, 执行过程中有三个状态
+
+  - 一: 开始状态 appear, enter, exit
+  - 二: 执行动画 appear-active, enter-active, exit-active
+  - 三: 结束动画 appear-done, enter-done, exit-done
+
+- SwitchTransition: 通常用于两个组件显示与隐藏切换时
+- TransitionGroup: 将多个动画组件包裹其中, 通常用于列表中元素的动画
