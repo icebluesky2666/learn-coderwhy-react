@@ -33,8 +33,8 @@ export default class Comments extends PureComponent {
           style={{ maxHeight: '300px', overflow: 'hidden', overflowY: 'auto' }}
           className="comment-list"
         >
-          {this.state.commentList.map((item) => {
-            return <CommentItem key={item.id} commentInfo={item} />
+          {this.state.commentList.map((item, index) => {
+            return <CommentItem key={item.id} commentInfo={item} removeItem={() => this.removeComment(index)} />
           })}
         </div>
         <CommentInput addComment={this.addComment} />
@@ -43,10 +43,21 @@ export default class Comments extends PureComponent {
     )
   }
 
+  // 增加评论
   addComment = (info) => {
     // console.log('我是父组件收到了', info)
     this.setState({
       commentList: [...this.state.commentList, info]
+    })
+  }
+
+  // 删除评论
+  removeComment = (index) => {
+    // console.log(index)
+    const newCommentList = [...this.state.commentList]
+    newCommentList.splice(index, 1)
+    this.setState({
+      commentList: newCommentList
     })
   }
 }
