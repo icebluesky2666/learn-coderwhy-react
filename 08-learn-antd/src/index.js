@@ -2,6 +2,12 @@ import React from 'react'
 // v18.0.0 的使用方式
 import reactDOM from 'react-dom/client'
 
+// moment 国际化
+// 简体
+import 'moment/locale/zh-cn'
+// 繁体
+// import 'moment/locale/zh-hk'
+
 // 导入 antd 的 css 样式
 // import 'antd/dist/antd.css'
 import 'antd/dist/antd.less'
