@@ -15,9 +15,10 @@
   opacity: 1;
   transform: scale(1);
 }
-/* .item-enter-done {
-  opacity: 1;
-} */
+.item-enter-done {
+  /* opacity: 1; */
+  color: red;
+}
 
 /* 隐藏 */
 .item-exit {

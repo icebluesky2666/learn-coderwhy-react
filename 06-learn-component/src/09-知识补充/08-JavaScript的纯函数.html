@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 纯函数示例1
+      function sum(num1, num2) {
+        return num1 + num2
+      }
+
+      // 非纯函数示例1: 因为 let 定义的 foo 可能会在后续的操作下被更改值, 导致相同的输入没有出现相同的输出
+      let foo = 10
+      function add(num) {
+        return foo + num
+      }
+
+      // 改写: 纯函数示例2: const 定义的变量不可变
+      const foo2 = 10
+      function add2(num) {
+        return foo2 + num
+      }
+    </script>
+  </body>
+</html>
