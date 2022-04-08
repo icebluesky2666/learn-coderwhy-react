@@ -375,3 +375,25 @@ yarn add react-transition-group
 - 函数在执行过程中, 不能产生函数副作用
 
 4. **React 非常灵活, 但它也有一个严格的规则: 所有 React 组件都必须像纯函数一样保护它们的 props 不被更改**
+
+## Redux
+
+**三大原则**
+
+1. 单一数据源
+
+- 整个应用程序的 state 被存储在一棵 object tree 中, 并且这个 object tree 只存储在一个 store 中
+- Redux 并没有强制让我们不能创建多个 Store, 但是那样做并不利于数据的维护
+- 单一的数据源可以让整个应用程序的 state 变得方便维护、追踪、修改
+
+2. state 是只读的
+
+- 唯一修改 state 的方法一定是触发 actions, 不要试图在其它地方通过任何方式来修改 state
+- 这样就确保了 View 或网络请求都不能直接修改 state, 它们只能通过 actions 来描述自己想要如何修改 state
+- 这样可以保证所有的修改都被集中化处理, 并且按照严格的顺序来执行, 所以不需要担心 race condition(竟态) 的问题
+
+3. 使用纯函数来执行修改
+
+- 通过 reducer 将旧的 state 和 actions 联系在一起, 并且返回一个新的 state
+- 随着应用程序的复杂度增加, 我们可以将一个 reducer 拆分成多个小的 reducer, 分别用于操作不同 state tree 的个别部分
+- 但是所有的 reducer 都应该是纯函数, 不能产生任何的副作用

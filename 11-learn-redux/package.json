@@ -1,0 +1,11 @@
+{
+  "name": "11-learn-redux",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "shifeng",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "redux": "^4.1.2"
+  }
+}
