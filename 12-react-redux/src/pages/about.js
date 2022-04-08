@@ -1,6 +1,10 @@
 import React from 'react'
+import { connect } from '../utils/connect'
+import { subAction } from '../store/actionCreators'
 
-export default function About(props) {
+function About(props) {
+  console.log(props)
+
   return (
     <div>
       <h2>当前计数: {props.counter}</h2>
@@ -9,3 +13,12 @@ export default function About(props) {
     </div>
   )
 }
+
+const mapStateProps = (state) => ({
+  counter: state.counter
+})
+const mapDispatchToProps = (dispatch) => ({
+  subCounter: (num) => dispatch(subAction(num))
+})
+
+export default connect(mapStateProps, mapDispatchToProps)(About)
