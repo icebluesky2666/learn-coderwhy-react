@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-// import SwitchTransitionDemo from './transition/SwitchTransitionDemo'
-// import CSSTransitionDemo from './transition/CSSTransitionDemo'
-import TransitionGroupDemo from './transition/TransitionGroupDemo'
+import CSSTransitionDemo from './01-CSSTransitionDemo'
+import SwitchTransitionDemo from './02-SwitchTransitionDemo'
+import TransitionGroupDemo from './03-TransitionGroupDemo'
+
 export default class App extends Component {
   componentDidMount() {
     console.log('App 组件挂载成功')
@@ -12,8 +13,14 @@ export default class App extends Component {
     return (
       <div>
         <h2>React App Template</h2>
-        {/* <CSSTransitionDemo /> */}
-        {/* <SwitchTransitionDemo /> */}
+        <CSSTransitionDemo />
+
+        <hr />
+
+        <SwitchTransitionDemo />
+
+        <hr />
+
         <TransitionGroupDemo />
       </div>
     )

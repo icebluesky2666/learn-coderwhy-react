@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
-import './SwitchTransitionDemo.css'
+import './css/switchTransition.css'
 
 export default class SwitchTransitionDemo extends PureComponent {
   constructor(props) {

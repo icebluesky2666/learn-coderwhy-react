@@ -1,6 +1,5 @@
 .card-box {
-  transition: opacity 300ms, transform 300ms;
-  transition: all 300ms;
+  transition: opacity 300ms, transform 500ms;
 }
 
 /* 显示 */
@@ -13,9 +12,10 @@
   opacity: 1;
   transform: scale(1);
 }
-/* .card-enter-done {
-  opacity: 1;
-} */
+.card-enter-done {
+  /* opacity: 1; */
+  /* transform: scale(1) rotate(-360deg); */
+}
 
 /* 隐藏 */
 .card-exit {
@@ -24,10 +24,11 @@
 }
 .card-exit-active {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.6) rotate(360deg);
 }
 .card-exit-done {
   opacity: 0;
+  /* transform: scale(0.6); */
   /* 如果在 CSSTransition 组件上添加 unmountOnExit={true} 属性则不需要下面代码 */
   /* 因为会将该组件完全卸载掉(DOM) */
   /* transform: scale(0.6); */

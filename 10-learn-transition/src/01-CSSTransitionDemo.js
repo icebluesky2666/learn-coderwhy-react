@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { Card, Avatar } from 'antd'
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons'
-import './CSSTransitionDemo.css'
+import './css/cssTransition.css'
 
 const { Meta } = Card
 export default class CSSTransitionDemo extends PureComponent {
