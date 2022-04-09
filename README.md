@@ -8,7 +8,7 @@
 npm install -g create-react-app
 ```
 
-若提示`Error: EACCES: permission denied`需要提升权限，使用 sudo
+若提示`Error: EACCES: permission denied`需要提升权限, 使用 sudo
 
 ## 创建 React 项目(create-react-app: CRA)
 
@@ -27,12 +27,12 @@ yarn run eject
 
 ## 目录说明
 
-PWD：全称为 progressive web app，即为渐进式 WEB 应用，这种 Web 存在的形式，我们也称之为 Web App
+PWD：全称为 progressive web app, 即为渐进式 WEB 应用, 这种 Web 存在的形式, 我们也称之为 Web App
 
 **PWA 解决了哪些问题？**
 
-1. 可以添加至主屏幕，点击主屏幕可以实现启动动画以及隐藏地址栏
-2. 实现离线缓存功能，即使用户手机没有网络，依然可以使用一些离线功能
+1. 可以添加至主屏幕, 点击主屏幕可以实现启动动画以及隐藏地址栏
+2. 实现离线缓存功能, 即使用户手机没有网络, 依然可以使用一些离线功能
 3. 实现了消息推送
 4. 等等一系列类似于 Native App 相关的功能
 
@@ -86,38 +86,40 @@ yarn.lock // 依赖库的确定版本信息
 
 ## 通信
 
-类组件通过 this.props 直接获取，在组件标签中传入 属性名称={属性值} 的方式
+类组件通过 this.props 直接获取, 在组件标签中传入 属性名称={属性值} 的方式
 
-React.createContext({}) 创建一个 context 用于数据共享
+const context = React.createContext({}) 创建一个 context 用于数据共享
+
+给 class 组件绑定上 contextType = context, 内部即可通过 this.context 拿到共享数据
 
 ## setState
 
-**是否为异步函数？分成两种情况，React 会更新内部上下文情况选择**
+**是否为异步函数？分成两种情况, React 会更新内部上下文情况选择**
 
-1. 异步：在组件生命周期或 React 合成事件(onClick...)中，setState 是异步的
-2. 同步：在 setTimeout 或者原生 DOM 事件中，setState 是同步的
+1. 异步：在组件生命周期或 React 合成事件(onClick...)中, setState 是异步的
+2. 同步：在 setTimeout 或者原生 DOM 事件中, setState 是同步的
 
 **为什么规定传入的数据需要是不可变的？**
 
-1. 因为 React 在更新视图时如果发现 shouldComponentUpdate 函数或者该组件继承于 PureComponent 内部将会有一个 props/state 的浅层比较用于决定是否重新执行 render 函数，又 JS 引用类型的特性，如果直接更改了数据然后进行 setState 的话，那么此时的 newState 与 prevState 引用地址将相等，导致组件不能正常进行更新
+1. 因为 React 在更新视图时如果发现 shouldComponentUpdate 函数或者该组件继承于 PureComponent 内部将会有一个 props/state 的浅层比较用于决定是否重新执行 render 函数, 又 JS 引用类型的特性, 如果直接更改了数据然后进行 setState 的话, 那么此时的 newState 与 prevState 引用地址将相等, 导致组件不能正常进行更新
 
 ## diff
 
-1. 同层节点之间相互比较，不会跨节点比较
-2. 不同类型的节点，产生不同的树结构
-3. 开发中，可以通过 key 来指定哪些节点在不同的渲染下保持稳定
+1. 同层节点之间相互比较, 不会跨节点比较
+2. 不同类型的节点, 产生不同的树结构
+3. 开发中, 可以通过 key 来指定哪些节点在不同的渲染下保持稳定
 
 ## keys 的优化
 
 1. keys 应该是唯一的
-2. 使用 index 作为 key，对性能是没有优化的
-3. key 不要使用随机数（随机数在下一次 render 时，会重新生成一个数字）
+2. 使用 index 作为 key, 对性能是没有优化的
+3. key 不要使用随机数（随机数在下一次 render 时, 会重新生成一个数字）
 
 ## 组件 render 更新
 
-1. 如果组件内实现了 shouldComponentUpdate 函数，将根据其返回值来决定是否更新 render 函数(需要注意的是，官网中写道：后续该函数可能被视为不是严格的指令，并且，当返回 flase 时，仍然可能导致组件重新渲染)
-2. 通过 PureComponent 继承的组件可以自动判断 props/state 变更，从而是否需要更新 render 函数(浅层比较-对象属性长度-对象属性是否相等-对象属性值是否相等)
-3. 前面两个都是关于类组件的，那如果是函数组件呢？可以使用 React 内置的 memo 函数返回一个新的函数组件来自己自动判断
+1. 如果组件内实现了 shouldComponentUpdate 函数, 将根据其返回值来决定是否更新 render 函数(需要注意的是, 官网中写道：后续该函数可能被视为不是严格的指令, 并且, 当返回 flase 时, 仍然可能导致组件重新渲染)
+2. 通过 PureComponent 继承的组件可以自动判断 props/state 变更, 从而是否需要更新 render 函数(浅层比较-对象属性长度-对象属性是否相等-对象属性值是否相等)
+3. 前面两个都是关于类组件的, 那如果是函数组件呢？可以使用 React 内置的 memo 函数返回一个新的函数组件来自己自动判断
 
 ## 事件总线 BUS
 
@@ -154,11 +156,11 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 1. 字符串：调用的时候直接使用 this.refs.ref 定义名称
 2. 对象：调用的时候需要 .current 才能拿到 DOM 元素
 3. 回调函数：直接可以获取到 DOM 元素
-4. 组件中绑定可以获取一个 ref 对象，这个对象 .current 可以拿到内部组件属性、方法等等...
+4. 组件中绑定可以获取一个 ref 对象, 这个对象 .current 可以拿到内部组件属性、方法等等...
 
 ## 受控组件与非受控组件的区别
 
-1. 受控组件：与 state 关联，由 React 进行状态管理
+1. 受控组件：与 state 关联, 由 React 进行状态管理
 2. 非受控组件：例如用 refs 来操作 DOM 元素从而获取属性值组件
 
 ## 高阶组件(函数)
@@ -181,14 +183,14 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 
 优点：
 
-1. 内联样式，样式之间不会有冲突
+1. 内联样式, 样式之间不会有冲突
 2. 通过设置 state 中的属性值动态设置样式
 
 缺点：
 
 1. 写法上都需要使用小驼峰标识
 2. 某些样式没有提示信息
-3. 大量的样式，可能会导致代码混乱
+3. 大量的样式, 可能会导致代码混乱
 4. 某些样式无法编写(比如伪类/伪元素)
 
 **CSS in JS**
@@ -232,7 +234,7 @@ import { PoweroffOutlined } from '@ant-design/icons'
 
 3. tree shaking 概念的引用
 
-可以选择使用的组件进行按需加载，打包时会将未使用的代码/组件进行去除，减少打包体积
+可以选择使用的组件进行按需加载, 打包时会将未使用的代码/组件进行去除, 减少打包体积
 
 4. 更改 antd 主题配置
 
