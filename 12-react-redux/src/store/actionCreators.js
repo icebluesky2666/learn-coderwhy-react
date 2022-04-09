@@ -28,6 +28,10 @@ export const subAction = (num) => {
 export const getHomeMultidata = async (dispatch, getState) => {
   // getState: 可以拿到 state 中的信息
   // console.log(getState())
-  const res = await axios.get('http://123.207.32.32:8000/home/multidata')
-  console.log(res)
+  try {
+    const res = await axios.get('http://123.207.32.32:8000/home/multidata')
+    console.log(res)
+  } catch (e) {
+    console.log(e)
+  }
 }

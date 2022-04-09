@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>迭代器与生成器</title>
+  </head>
+  <body>
+    <script>
+      // 1. 定义一个生成器函数
+      function* foo() {
+        // yield 调用第一个 next() 时执行
+        console.log('Hello')
+        yield '111'
+        // yield 调用第二个 next() 时执行
+        console.log('Hello 2')
+        yield '222'
+        // yield 调用第三个 next() 时执行
+        console.log('Hello 3')
+        yield '333'
+      }
+
+      // 2. 获取迭代器对象
+      const iteratorObj = foo()
+      console.log(iteratorObj)
+
+      // 可以使用 for of 的方式遍历迭代器
+      // for (let i of iteratorObj) {
+      //   console.log(i) // 每次 yield 的返回值
+      // }
+
+      const val1 = iteratorObj.next()
+      // value: yield 后面的值
+      // done: 迭代器是否迭代完成(还没有yield了)
+      console.log(val1) // { value: '111', done: false }
+
+      // generator 与 Promise 的结合使用
+      function* bar() {
+        console.log('bar 被执行')
+        const res = yield new Promise((resolve, reject) => {
+          // 通过定时器模拟网络请求
+          setTimeout(() => {
+            resolve('Hello Generator！')
+          }, 1000)
+        })
+        // 第二次 yield 的时候才会赋值以及执行下面的输出
+        console.log(res)
+      }
+
+      const it = bar()
+
+      it.next().value.then((res) => {
+        // 将 Promise resolve 返回的数据作为第一次 yield 的返回值
+        it.next(res)
+      })
+    </script>
+  </body>
+</html>
