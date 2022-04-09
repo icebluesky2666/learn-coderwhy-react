@@ -399,3 +399,11 @@ yarn add react-transition-group
 - 通过 reducer 将旧的 state 和 actions 联系在一起, 并且返回一个新的 state
 - 随着应用程序的复杂度增加, 我们可以将一个 reducer 拆分成多个小的 reducer, 分别用于操作不同 state tree 的个别部分
 - 但是所有的 reducer 都应该是纯函数, 不能产生任何的副作用
+
+```shell
+# 不单单可以在 react 中使用
+yarn add redux
+
+# 结合 react 使用
+yarn add react-redux
+```

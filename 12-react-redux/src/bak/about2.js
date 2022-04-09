@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { connect } from '../utils/connect'
 import { subAction } from '../store/actionCreators'
 
 function About(props) {
