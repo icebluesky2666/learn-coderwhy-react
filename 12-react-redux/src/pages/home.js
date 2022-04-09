@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addAction } from '../store/actionCreators'
+import { addAction, getHomeMultidata } from '../store/actionCreators'
 
 function Home(props) {
   console.log(props)
+
+  props.getHomeData()
 
   return (
     <div>
@@ -18,7 +20,8 @@ const mapStateProps = (state) => ({
   counter: state.counter
 })
 const mapDispatchToProps = (dispatch) => ({
-  addCounter: (num) => dispatch(addAction(num))
+  addCounter: (num) => dispatch(addAction(num)),
+  getHomeData: () => dispatch(getHomeMultidata)
 })
 
 export default connect(mapStateProps, mapDispatchToProps)(Home)

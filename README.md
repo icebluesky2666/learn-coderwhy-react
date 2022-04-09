@@ -406,4 +406,9 @@ yarn add redux
 
 # 结合 react 使用
 yarn add react-redux
+
+# 让 redux 可以异步操作的中间件
+yarn add redux-thunk
 ```
+
+redux-thunk 中间件可以使得 dispatch 中参数 action 为一个函数,且将 dispatch 作为参数传入, 我们可以在这个函数中进行异步操作, 等拿到返回结果后, 再去分发 dispatch 去变更 state 信息
