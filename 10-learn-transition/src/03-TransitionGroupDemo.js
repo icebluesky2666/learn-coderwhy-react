@@ -37,20 +37,22 @@ export default class TransitionGroupDemo extends PureComponent {
       //     <p className="item-box">{122}</p>
       //   </CSSTransition>
       // </div>
-      <TransitionGroup>
+      <>
         <button onClick={this.addItem}>追加名称</button>
-        {names.map((item, index) => {
-          return (
-            // 使用 item 作为 key 值时,添加会出现问题,但是我们是学习,真正开发时 key 肯定会选择唯一的
-            <CSSTransition key={item} classNames="item" timeout={300}>
-              <div className="item-box">
-                <span>{item}——</span>
-                <button onClick={this.removeItem.bind(this, index)}>删除</button>
-              </div>
-            </CSSTransition>
-          )
-        })}
-      </TransitionGroup>
+        <TransitionGroup>
+          {names.map((item, index) => {
+            return (
+              // 使用 item 作为 key 值时,添加会出现问题,但是我们是学习,真正开发时 key 肯定会选择唯一的
+              <CSSTransition key={item} classNames="item" timeout={300}>
+                <div className="item-box">
+                  <span>{item}——</span>
+                  <button onClick={this.removeItem.bind(this, index)}>删除</button>
+                </div>
+              </CSSTransition>
+            )
+          })}
+        </TransitionGroup>
+      </>
     )
   }
 }

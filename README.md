@@ -436,3 +436,11 @@ React 官方: Find a balance that works for you, and go with it.
   - UI 相关的组件内部可以维护的状态, 在组件内部自己来维护
   - 只要是需要共享的状态, 都交给 redux 来管理和维护
   - 从服务器请求的数据(包括请求的操作), 交给 redux 来维护
+
+## 单向数据流
+
+通过 props 进行数据传递, 数据流从上往下传递, 只能由顶层进行数据变更
+
+Vue 和 React 的组件内部都有单向数据流的概念
+
+Redux 中, State -> UI -> Dispatch -> Reducer -> State
