@@ -444,3 +444,10 @@ React 官方: Find a balance that works for you, and go with it.
 Vue 和 React 的组件内部都有单向数据流的概念
 
 Redux 中, State -> UI -> Dispatch -> Reducer -> State
+
+## 前端路由
+
+**原理**
+
+1. 改变 URL, 但是页面不要进行强制刷新(a 元素点击事件会默认强制刷新, 需要禁用)
+2. 自己来监听 URL 的改变, 并且改变之后自己改变页面的内容
