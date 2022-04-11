@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="tab-bar">
+        <a href="/home">首页</a>
+        <a href="/about">关于</a>
+      </div>
+
+      <div class="router-view">暂无</div>
+    </div>
+
+    <script>
+      // 获取所有a标签的 DOM 元素
+      const aEls = document.querySelectorAll('a')
+      const routerViewEl = document.querySelector('.router-view')
+      // 监听 a 标签的点击
+      aEls.forEach((ele) => {
+        ele.onclick = function (event) {
+          // console.log('a 元素点击了')
+          // console.log(ele.getAttribute('href'))
+          window.history.pushState({}, '', ele.getAttribute('href'))
+          setUrlChange(window.location.pathname)
+          // 阻止默认点击事件
+          event.preventDefault()
+        }
+      })
+
+      // URL 改变
+      function setUrlChange(pathname) {
+        switch (pathname) {
+          case '/home':
+            routerViewEl.innerHTML = '首页'
+            break
+          case '/about':
+            routerViewEl.innerHTML = '关于'
+            break
+          default:
+            routerViewEl.innerHTML = '暂无'
+            break
+        }
+      }
+
+      // 监听浏览器返回与前进操作
+      window.addEventListener('popstate', () => {
+        console.log('popstate 事件触发了', window.location.pathname)
+        setUrlChange(window.location.pathname)
+      })
+
+      // TIP: 事件监听失败
+      // window.addEventListener('pushstate', () => {
+      //   console.log('pushstate 事件触发了', window.location.pathname)
+      // })
+    </script>
+  </body>
+</html>
