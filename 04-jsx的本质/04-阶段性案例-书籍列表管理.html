@@ -139,6 +139,7 @@
 
         // 获取总价
         getAllPrice() {
+          // reduce("回调函数("累加值/前一次计算后的值/第一次为初始值/没有初始值默认为数组第一个元素的值", "当前遍历数组元素的值")", "初始值")
           return this.formatPrice(
             this.state.tableData.reduce((accumulator, cur) => {
               return accumulator + cur.price * cur.num
