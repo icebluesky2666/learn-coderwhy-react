@@ -418,3 +418,21 @@ redux-saga 中间也可以拦截 actions, 通过监听 actions.type 来拦截并
 - 创建 saga 实例
 - 调用 run 方法
 - 将一个生成器函数(配置依赖 actions)传入 run 方法
+
+## 状态管理
+
+- 组件中自己的 state 管理
+
+- Context 数据的共享状态
+
+- Redux 管理应用状态
+
+React 官方: Find a balance that works for you, and go with it.
+
+翻译: 作为一个开发者, 选择怎样的状态管理方式, 是你的工作之一, 找到一个最好的平衡的方式并坚持下去
+
+- coderwhy 老师采用的 state 管理方案:
+
+  - UI 相关的组件内部可以维护的状态, 在组件内部自己来维护
+  - 只要是需要共享的状态, 都交给 redux 来管理和维护
+  - 从服务器请求的数据(包括请求的操作), 交给 redux 来维护

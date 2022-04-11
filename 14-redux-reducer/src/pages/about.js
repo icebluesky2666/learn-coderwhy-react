@@ -26,11 +26,13 @@ function About(props) {
   )
 }
 
-const mapStateProps = (state) => ({
-  counter: state.counterInfo.counter,
-  banners: state.homeDataInfo.banners,
-  recommends: state.homeDataInfo.recommends
-})
+const mapStateProps = (state) => {
+  return {
+    counter: state.counterInfo.counter,
+    banners: state.homeDataInfo.banners,
+    recommends: state.homeDataInfo.recommends
+  }
+}
 const mapDispatchToProps = (dispatch) => ({
   subCounter: (num) => dispatch(subAction(num))
 })

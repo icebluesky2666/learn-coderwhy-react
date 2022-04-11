@@ -13,7 +13,7 @@ const homeReducer = (state = initialHomeState, actions) => {
     case GET_RECOMMENDATA:
       return { ...state, recommends: actions.recommends }
     default:
-      return { ...state }
+      return state
   }
 }
 

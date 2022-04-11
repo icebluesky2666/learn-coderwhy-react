@@ -16,7 +16,7 @@ const counterReducer = (state = initialCounterState, actions) => {
     case SUB_NUMBER:
       return { ...state, counter: state.counter - actions.num }
     default:
-      return { ...state }
+      return state
   }
 }
 
