@@ -1,7 +1,15 @@
 import axios from 'axios'
 
 // actions 创建
-import { INCREMENT, DECREMENT, ADD_NUMBER, SUB_NUMBER } from './constants.js'
+import {
+  INCREMENT,
+  DECREMENT,
+  ADD_NUMBER,
+  SUB_NUMBER,
+  FETCH_HOME_MULTIDATA,
+  GET_BANNAERDATA,
+  GET_RECOMMENDATA
+} from './constants.js'
 
 // +1
 export const inAction = () => {
@@ -23,6 +31,14 @@ export const subAction = (num) => {
   return { type: SUB_NUMBER, num }
 }
 
+export const getBannerAction = (banners) => {
+  return { type: GET_BANNAERDATA, banners }
+}
+
+export const getRecommendAction = (recommends) => {
+  return { type: GET_RECOMMENDATA, recommends }
+}
+
 // redux-thunk 可以使得 dispatch 中参数 action 为一个函数,且将 dispatch 作为参数传入
 // 我们可以在这个函数中进行异步操作,等拿到返回结果后,在分发 dispatch 去变更 state 信息
 export const getHomeMultidata = async (dispatch, getState) => {
@@ -34,4 +50,8 @@ export const getHomeMultidata = async (dispatch, getState) => {
   } catch (e) {
     console.log(e)
   }
+}
+
+export const fechHomeMultidataAction = {
+  type: FETCH_HOME_MULTIDATA
 }

@@ -411,4 +411,10 @@ yarn add react-redux
 yarn add redux-thunk
 ```
 
-redux-thunk 中间件可以使得 dispatch 中参数 action 为一个函数,且将 dispatch 作为参数传入, 我们可以在这个函数中进行异步操作, 等拿到返回结果后, 再去分发 dispatch 去变更 state 信息
+redux-thunk 中间件可以使得 dispatch 中参数 actions 为一个函数,且将 dispatch 作为参数传入, 我们可以在这个函数中进行异步操作, 等拿到返回结果后, 再去分发 dispatch 去变更 state 信息
+
+redux-saga 中间也可以拦截 actions, 通过监听 actions.type 来拦截并执行相关拦截操作, 使用生成器函数和 yield 搭配使用, 使用方式详情看代码吧...
+
+- 创建 saga 实例
+- 调用 run 方法
+- 将一个生成器函数(配置依赖 actions)传入 run 方法
