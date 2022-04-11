@@ -451,3 +451,24 @@ Redux 中, State -> UI -> Dispatch -> Reducer -> State
 
 1. 改变 URL, 但是页面不要进行强制刷新(a 元素点击事件会默认强制刷新, 需要禁用)
 2. 自己来监听 URL 的改变, 并且改变之后自己改变页面的内容
+
+```shell
+# 只安装这个就行, 内部依赖会自动安装 react-router
+yarn add react-router-dom
+```
+
+**提供给我们的组件@6.3.0 版本**
+
+1. BrowserRouter or HashRouter: hash 解析, 或者 history 解析
+2. Link and NavLink
+
+- 通过路径的跳转使用, 最终会被渲染成`<a></a>`标签
+- NavLink 在 Link 组件基础上增加了一些样式属性(增强)
+- to 属性: Link 中最重要的属性, 用于设置跳转到的路径
+
+3. Route
+
+- Route: 用于路径的匹配, 顶层需要使用 Routes
+- path 属性: 用于设置匹配到的路径
+- element 属性: 设置匹配到的路径后, 渲染的组件, 如: `<Home />`
+- (新的版本好像默认就是) exact: 精准匹配, 只有精准匹配到完全一致的路径, 才会渲染对应的组件
