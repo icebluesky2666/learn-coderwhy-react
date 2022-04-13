@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
+import { NavLink, Route, Routes, useNavigate, useParams } from 'react-router-dom'
 
 function AboutHistory() {
   return <h2>我们的企业历史悠久</h2>
@@ -14,7 +14,10 @@ function AboutContact() {
 }
 
 function AboutJoin() {
-  return <h2>加入我们: 投递简历到xxx@xxx.com</h2>
+  // 获取动态传递的参数
+  const params = useParams()
+  console.log(params)
+  return <h2>加入我们: 投递简历到xxx@xxx.com id: {params.id}</h2>
 }
 function About() {
   const navigate = useNavigate()
@@ -22,7 +25,7 @@ function About() {
   // 跳转到加入我们
   const jumpToJoin = () => {
     // console.log(navigate)
-    navigate('/about/join')
+    navigate('/about/join/123')
   }
 
   return (
@@ -39,7 +42,7 @@ function About() {
         <Route index element={<AboutHistory />} />
         <Route path="culture" element={<AboutCulture />} />
         <Route path="contact" element={<AboutContact />} />
-        <Route path="join" element={<AboutJoin />} />
+        <Route path="join/:id" element={<AboutJoin />} />
       </Routes>
     </div>
   )
