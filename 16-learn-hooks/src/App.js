@@ -7,7 +7,7 @@
 
 // import PureHookCounter2 from './01-hook初体验/04-Purehook-Counter'
 
-import TitleCounter from './03-useEffect的使用/01-ClassTitleCounter'
+// import TitleCounter from './03-useEffect的使用/01-ClassTitleCounter'
 import HookTitleCounter from './03-useEffect的使用/02-HookTitleCounter'
 
 function App() {
@@ -16,16 +16,20 @@ function App() {
       <h2>React App Template</h2>
       <hr />
 
+      {/* 1. Hook 初体验 */}
       {/* <ClassCounter />
       <HookCounter />
       <PureHookCounter /> */}
 
+      {/* 2. 复杂状态变更 */}
       {/* <MultiSateCpn />
       <ComplexHookState /> */}
 
+      {/* Hook 补充 */}
       {/* <PureHookCounter2 /> */}
 
-      <TitleCounter />
+      {/* 3. useEffect */}
+      {/* <TitleCounter /> */}
       <HookTitleCounter />
     </div>
   )

@@ -7,6 +7,7 @@ function HookTitleCounter() {
   // mount&update 时都会触发
   useEffect(() => {
     console.log('useEffect 触发')
+    window.document.title = counter
   })
 
   return (
