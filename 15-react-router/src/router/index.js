@@ -6,7 +6,7 @@ import { AboutHistory, AboutCulture, AboutContact, AboutJoin } from '../pages/ab
 import Profile from '../pages/profile'
 import User from '../pages/user'
 import NoMatch from '../pages/noMatch'
-import Login from '../pages/login'
+// import Login from '../pages/login'
 
 // 配置路由映射关系
 const routes = [

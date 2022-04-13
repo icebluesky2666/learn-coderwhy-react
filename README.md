@@ -471,4 +471,24 @@ yarn add react-router-dom
 - Route: 用于路径的匹配, 顶层需要使用 Routes
 - path 属性: 用于设置匹配到的路径
 - element 属性: 设置匹配到的路径后, 渲染的组件, 如: `<Home />`
-- (新的版本好像默认就是) exact: 精准匹配, 只有精准匹配到完全一致的路径, 才会渲染对应的组件
+- (新的版本默认就是, 不需要了) exact: 精准匹配, 只有精准匹配到完全一致的路径, 才会渲染对应的组件
+
+4. 一些编程式导航的函数 useNavigate | useParams | useLocation | useRoutes
+
+## Hook
+
+**为什么要使用 Hook?**
+
+官方原话: Hook 是 React16.8 的新增特性, 它可以让我们在不编写 Class 的情况下使用 state 以及其它的 React 特性(生命周期等)
+
+- hooks 写出来的代码比 Class 更加简洁明了
+
+**Class 组件存在的问题?**
+
+- 我们在最初编写一个 Class 组件时, 往往逻辑比较简单, 并不会非常复杂, 但是随着业务的增多, 我们的 Class 组件会变得越来越复杂
+
+- 比如 componentDidMout 中, 可能就会包含大量的逻辑代码: 网络请求, 事件监听(还需要在 componentWillUnmount 中移除)
+
+- 而对于这样的 Class 实际上非常难以拆分: 因为它们的逻辑往往混在一起, 强行拆分反而会造成过度设计, 从而增加代码的复杂度
+
+- 组件复用状态很难: 比如前面我们学习 redux 中 connect 或 react-router 中的 withRouter, 或者类似于 Provider, Consumer 来共享一些状态, 这些高阶组件设计的目的就是为了状态的复用, 但是多次使用, 我们的代码就会存在较多的嵌套, 这些代码让我们不管是编写和设计上来说, 都变得非常困难
