@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
 // import ClassCounter from './01-hook初体验/01-Class-Counter'
 // import HookCounter from './01-hook初体验/02-hook-Counter'
@@ -12,10 +12,13 @@ import { useState } from 'react'
 // import TitleCounter from './03-useEffect的使用/01-ClassTitleCounter'
 // import HookTitleCounter from './03-useEffect的使用/02-HookTitleCounter'
 // import EffectHookCancel from './03-useEffect的使用/03-模拟订阅和取消订阅'
-import MultiEffectHook from './03-useEffect的使用/04-多个useEffect的使用'
+// import MultiEffectHook from './03-useEffect的使用/04-多个useEffect的使用'
+
+import { UserContext, ThemeContext } from './utils/shareContext'
+import HookContext from './04-useContext的使用/01-useContext初体验'
 
 function App() {
-  const [show, setShow] = useState(true)
+  // const [show, setShow] = useState(true)
 
   return (
     <div>
@@ -41,7 +44,18 @@ function App() {
       {/* <button onClick={() => setShow(!show)}>切换组件订阅</button>
       {show && <EffectHookCancel />} */}
 
-      <MultiEffectHook />
+      {/* 4. 多个useEffect */}
+      {/* <MultiEffectHook /> */}
+
+      {/* 5. useConext */}
+      <UserContext.Provider value={{ name: '小陈', age: 20 }}>
+        <ThemeContext.Provider value={{ fontSize: 100, color: 'blue' }}>
+          {/* 使用 Provider 的 value */}
+          <HookContext />
+        </ThemeContext.Provider>
+      </UserContext.Provider>
+      {/* 使用默认值 */}
+      <HookContext />
     </div>
   )
 }

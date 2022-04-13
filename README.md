@@ -503,15 +503,19 @@ yarn add react-router-dom
 - "create" 可能不是很准确, 因为 state 只有首次组件渲染时创建
 - 如果每次都创建新的变量, 它就不是 "state" 了
 
-**useState()**
+**useState**
 
 - 调用函数可以传一个初始化值, 不传默认为 undefined
 - useState 函数返回一个数组, 第一个元素存储值, 第二个元素存储变更值的函数
 - 变更值函数接收的参数会直接替换掉 state, 变更时不要直接修改 state, 接收参数可以传入一个函数(返回一个 state)
 
-**useEffect()**
+**useEffect**
 
 - 第一个参数：函数, 钩子函数, 可以模拟 Class 组件生命周期函数
 - mount&update 时都会触发
-- 第二个参数: 数组, 数组内是依赖的数据源, 数据源发生改变时重新执行第一个参数, 假如我们传递一个空数组的话, 表示不依赖数据, 这样第一个参数就只有在第一次渲染时执行, 与 class 组件的 componentDidMount 生命周期效果一致
--
+- 第二个参数: 数组, 数组内是依赖的数据源, 数据源发生改变时重新执行第一个参数, 假如我们传递一个`[]`空数组的话, 表示不依赖数据, 这样第一个参数就只有在第一次渲染时执行, 与 class 组件的 componentDidMount 生命周期效果一致
+
+**useContext**
+
+- 第一个参数: 接收一个 React.Context
+- 返回 Context 的值
