@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom'
+import { useNavigate, BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import About from './pages/about'
 import Home from './pages/home'
 import Profile from './pages/profile'
@@ -8,7 +8,7 @@ import User from './pages/user'
 import Login from './pages/login'
 import './App.css'
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -76,10 +76,13 @@ export default class App extends Component {
             {/* 路由匹配 */}
             {/* <Route path="/:id" element={<User />} /> */}
             {/* 没有匹配上的 */}
-            {/* <Route path="*" element={<NoMatch />} /> */}
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </BrowserRouter>
       </div>
     )
   }
 }
+
+// export default useNavigate(App)
+export default App
