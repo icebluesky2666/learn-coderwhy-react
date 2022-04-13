@@ -502,3 +502,14 @@ yarn add react-router-dom
 
 - "create" 可能不是很准确, 因为 state 只有首次组件渲染时创建
 - 如果每次都创建新的变量, 它就不是 "state" 了
+
+**useState()**
+
+- 调用函数可以传一个初始化值, 不传默认为 undefined
+- useState 函数返回一个数组, 第一个元素存储值, 第二个元素存储变更值的函数
+- 变更值函数接收的参数会直接替换掉 state, 变更时不要直接修改 state, 接收参数可以传入一个函数(返回一个 state)
+
+**useEffect()**
+
+- 第一个参数：钩子函数, 可以模拟 Class 组件生命周期函数
+- mount&update 时都会触发
