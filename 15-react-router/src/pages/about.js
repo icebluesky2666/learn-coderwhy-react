@@ -14,24 +14,38 @@ function AboutContact() {
   return <h2>我们的企业联系方式: 68898889</h2>
 }
 
+// function AboutJoin() {
+//   // 获取动态传递的参数
+//   const params = useParams()
+//   const location = useLocation()
+//   console.log(params, location)
+//   // 利用第三库帮助我们解析
+//   const info = qs.parse(location.search)
+//   console.log(info)
+//   // return <h2>加入我们: 投递简历到xxx@xxx.com id: {params.id}</h2>
+//   return (
+//     <h2>
+//       加入我们: 投递简历到xxx@xxx.com
+//       <p>
+//         name: {info.name} age: {info.age}
+//       </p>
+//     </h2>
+//   )
+// }
+
+// 通过 state 属性获取
 function AboutJoin() {
-  // 获取动态传递的参数
-  const params = useParams()
   const location = useLocation()
-  console.log(params, location)
-  // 利用第三库帮助我们解析
-  const info = qs.parse(location.search)
-  console.log(info)
-  // return <h2>加入我们: 投递简历到xxx@xxx.com id: {params.id}</h2>
+  const state = location.state || {}
+  console.log(state)
   return (
     <h2>
       加入我们: 投递简历到xxx@xxx.com
-      <p>
-        name: {info.name} age: {info.age}
-      </p>
+      <p>name: {state.name}</p>
     </h2>
   )
 }
+
 function About() {
   const navigate = useNavigate()
 
@@ -43,8 +57,8 @@ function About() {
       age: 18
     }
     // navigate(`/about/join/123`)
-    navigate('/about/join?name=chen&age=18')
-    // navigate(`/about/join`, { state: info })
+    // navigate('/about/join?name=chen&age=18')
+    navigate(`/about/join`, { state: info })
   }
 
   return (
