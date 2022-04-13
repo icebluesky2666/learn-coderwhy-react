@@ -8,9 +8,13 @@
 // import PureHookCounter2 from './01-hook初体验/04-Purehook-Counter'
 
 // import TitleCounter from './03-useEffect的使用/01-ClassTitleCounter'
+import { useState } from 'react'
 import HookTitleCounter from './03-useEffect的使用/02-HookTitleCounter'
+import EffectHookCancel from './03-useEffect的使用/03-模拟订阅和取消订阅'
 
 function App() {
+  const [show, setShow] = useState(true)
+
   return (
     <div>
       <h2>React App Template</h2>
@@ -30,7 +34,10 @@ function App() {
 
       {/* 3. useEffect */}
       {/* <TitleCounter /> */}
-      <HookTitleCounter />
+      {/* <HookTitleCounter /> */}
+
+      <button onClick={() => setShow(!show)}>切换组件订阅</button>
+      {show && <EffectHookCancel />}
     </div>
   )
 }
