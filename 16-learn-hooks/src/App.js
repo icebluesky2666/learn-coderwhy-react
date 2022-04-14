@@ -25,8 +25,11 @@
 // import HookMemoComplexCalc from './07-useMemo的使用/01-useMemo复杂计算时的性能优化'
 // import HookMemoSonCpn from './07-useMemo的使用/02-useMemo子组件应用'
 
-import HookRefDemo from './08-useRef的使用/01-useRef引用dom'
-import HookRefDemo02 from './08-useRef的使用/02-useRef引用其它数据'
+// import HookRefDemo from './08-useRef的使用/01-useRef引用dom'
+// import HookRefDemo02 from './08-useRef的使用/02-useRef引用其它数据'
+
+import HookForwardRefDemo from './09-useImperativeHandle/01-回顾-forwardRef-用法'
+import HookImperativeHandleDemo from './09-useImperativeHandle/02-useImperativeHandle-用法'
 
 function App() {
   // const [show, setShow] = useState(true)
@@ -35,9 +38,14 @@ function App() {
     <div>
       <h2>React App Template</h2>
       <hr />
+
+      {/* 10. useImperativeHandle */}
+      <HookForwardRefDemo />
+      <HookImperativeHandleDemo />
+
       {/* 9. useRef */}
-      <HookRefDemo />
-      <HookRefDemo02 />
+      {/* <HookRefDemo /> */}
+      {/* <HookRefDemo02 /> */}
 
       {/* 8. useMemo */}
       {/* <HookMemoComplexCalc /> */}
