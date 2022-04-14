@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 // import ClassCounter from './01-hook初体验/01-Class-Counter'
 // import HookCounter from './01-hook初体验/02-hook-Counter'
 // import PureHookCounter from './01-hook初体验/03-Purehook-Counter'
@@ -14,7 +13,7 @@ import { useState } from 'react'
 // import EffectHookCancel from './03-useEffect的使用/03-模拟订阅和取消订阅'
 // import MultiEffectHook from './03-useEffect的使用/04-多个useEffect的使用'
 
-import { UserContext, ThemeContext } from './utils/shareContext'
+// import { UserContext, ThemeContext } from './utils/shareContext'
 // import HookContext from './04-useContext的使用/01-useContext初体验'
 
 // import HookReducerCpn from './05-useReducer的使用'
@@ -35,7 +34,11 @@ import { UserContext, ThemeContext } from './utils/shareContext'
 // import HookLayoutEffectCounterDemo from './10-useLayoutEffect/02-useLayoutEffect-counter-修改'
 
 // import CustomSampleHook from './11-自定义Hook/01-认识自定义Hook'
-import HookContextShare from './11-自定义Hook/02-自定义Hook练习-Context共享'
+
+// import { UserContext, ThemeContext } from './utils/shareContext'
+// import HookContextShare from './11-自定义Hook/02-自定义Hook练习-Context共享'
+
+import CustomHookScrollHeight from './11-自定义Hook/03-自定义Hook-实时获取浏览器滚动高度'
 
 function App() {
   const [show, setShow] = useState(true)
@@ -48,11 +51,13 @@ function App() {
       {/* 12. 自定义Hook */}
       <button onClick={() => setShow(!show)}>切换组件显示/销毁</button>
       {/* {show && <CustomSampleHook />} */}
-      <UserContext.Provider value={{ name: '小陈', age: 20 }}>
+      {/* <UserContext.Provider value={{ name: '小陈', age: 20 }}>
         <ThemeContext.Provider value={{ fontSize: 100, color: 'blue' }}>
           <HookContextShare />
         </ThemeContext.Provider>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+
+      <CustomHookScrollHeight />
 
       {/* 11. useLayoutEffect */}
       {/* <HookEffectCounterDemo /> */}
