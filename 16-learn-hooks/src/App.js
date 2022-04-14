@@ -14,7 +14,7 @@ import { useState } from 'react'
 // import EffectHookCancel from './03-useEffect的使用/03-模拟订阅和取消订阅'
 // import MultiEffectHook from './03-useEffect的使用/04-多个useEffect的使用'
 
-// import { UserContext, ThemeContext } from './utils/shareContext'
+import { UserContext, ThemeContext } from './utils/shareContext'
 // import HookContext from './04-useContext的使用/01-useContext初体验'
 
 // import HookReducerCpn from './05-useReducer的使用'
@@ -34,7 +34,8 @@ import { useState } from 'react'
 // import HookEffectCounterDemo from './10-useLayoutEffect/01-useEffect-counter-修改'
 // import HookLayoutEffectCounterDemo from './10-useLayoutEffect/02-useLayoutEffect-counter-修改'
 
-import CustomSampleHook from './11-自定义Hook/01-认识自定义Hook'
+// import CustomSampleHook from './11-自定义Hook/01-认识自定义Hook'
+import HookContextShare from './11-自定义Hook/02-自定义Hook练习-Context共享'
 
 function App() {
   const [show, setShow] = useState(true)
@@ -43,9 +44,15 @@ function App() {
     <div>
       <h2>React App Template</h2>
       <hr />
+
       {/* 12. 自定义Hook */}
       <button onClick={() => setShow(!show)}>切换组件显示/销毁</button>
-      {show && <CustomSampleHook />}
+      {/* {show && <CustomSampleHook />} */}
+      <UserContext.Provider value={{ name: '小陈', age: 20 }}>
+        <ThemeContext.Provider value={{ fontSize: 100, color: 'blue' }}>
+          <HookContextShare />
+        </ThemeContext.Provider>
+      </UserContext.Provider>
 
       {/* 11. useLayoutEffect */}
       {/* <HookEffectCounterDemo /> */}
