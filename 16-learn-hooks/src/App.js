@@ -28,8 +28,11 @@
 // import HookRefDemo from './08-useRef的使用/01-useRef引用dom'
 // import HookRefDemo02 from './08-useRef的使用/02-useRef引用其它数据'
 
-import HookForwardRefDemo from './09-useImperativeHandle/01-回顾-forwardRef-用法'
-import HookImperativeHandleDemo from './09-useImperativeHandle/02-useImperativeHandle-用法'
+// import HookForwardRefDemo from './09-useImperativeHandle/01-回顾-forwardRef-用法'
+// import HookImperativeHandleDemo from './09-useImperativeHandle/02-useImperativeHandle-用法'
+
+import HookEffectCounterDemo from './10-useLayoutEffect/01-useEffect-counter-修改'
+import HookLayoutEffectCounterDemo from './10-useLayoutEffect/02-useLayoutEffect-counter-修改'
 
 function App() {
   // const [show, setShow] = useState(true)
@@ -38,10 +41,13 @@ function App() {
     <div>
       <h2>React App Template</h2>
       <hr />
+      {/* 11. useLayoutEffect */}
+      <HookEffectCounterDemo />
+      <HookLayoutEffectCounterDemo />
 
       {/* 10. useImperativeHandle */}
-      <HookForwardRefDemo />
-      <HookImperativeHandleDemo />
+      {/* <HookForwardRefDemo /> */}
+      {/* <HookImperativeHandleDemo /> */}
 
       {/* 9. useRef */}
       {/* <HookRefDemo /> */}

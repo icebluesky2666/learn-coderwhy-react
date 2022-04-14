@@ -2,14 +2,18 @@ import React, { forwardRef, useImperativeHandle, useRef } from 'react'
 
 const FInput = forwardRef((props, ref) => {
   const innerRef = useRef()
-  useImperativeHandle(ref, () => ({
-    setFocus: () => {
-      innerRef.current.focus()
-    },
-    setContent: (content) => {
-      innerRef.current.value += content
-    }
-  }))
+  useImperativeHandle(
+    ref,
+    () => ({
+      setFocus: () => {
+        innerRef.current.focus()
+      },
+      setContent: (content) => {
+        innerRef.current.value += content
+      }
+    }),
+    [innerRef]
+  )
   return <input ref={innerRef} type="text" />
 })
 

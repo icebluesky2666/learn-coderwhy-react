@@ -560,3 +560,8 @@ yarn add react-router-dom
 - 第一个参数: ref 对象
 - 第二个参数: 一般是一个对象, 暴露出给外部调用的方法/属性 等
 - 第三个参数: 数组, 更新依赖项
+
+**useLayoutEffect**
+
+- 与 useEffect 基本一样
+- 区别: useEffect DOM 更新后执行, 不阻塞 DOM 更新, useLayoutEffect DOM 更新前执行, 会阻塞 DOM 的更新
