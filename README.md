@@ -541,3 +541,8 @@ yarn add react-router-dom
 1. useCallback 会返回一个函数的 memoized(有记忆的) 值
 2. 在依赖不改变时, 多次定义的时候, 返回的值是相同的
 3. 场景: 在将一个组件函数,传递给子元素进行回调时, 使用 useCallback 对函数进行处理
+
+**useMemo**
+
+- 我感觉和 useCallback 差不多...
+- 根据依赖项判断是否需要更新函数返回

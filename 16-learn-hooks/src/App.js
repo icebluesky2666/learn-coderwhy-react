@@ -20,7 +20,10 @@
 // import HookReducerCpn from './05-useReducer的使用'
 
 // import HookCallbackDemo1 from './06-useCallback的使用/01-不会进行性能优化的写法'
-import HookCallbackDemo2 from './06-useCallback的使用/02-会进行性能优化的写法'
+// import HookCallbackDemo2 from './06-useCallback的使用/02-会进行性能优化的写法'
+
+import HookMemoComplexCalc from './07-useMemo的使用/01-useMemo复杂计算时的性能优化'
+import HookMemoSonCpn from './07-useMemo的使用/02-useMemo子组件应用'
 
 function App() {
   // const [show, setShow] = useState(true)
@@ -30,9 +33,13 @@ function App() {
       <h2>React App Template</h2>
       <hr />
 
+      {/* 8. useMemo */}
+      <HookMemoComplexCalc />
+      <HookMemoSonCpn />
+
       {/* 7. useCallback */}
       {/* <HookCallbackDemo1 /> */}
-      <HookCallbackDemo2 />
+      {/* <HookCallbackDemo2 /> */}
 
       {/* 6. useReducer */}
       {/* <HookReducerCpn /> */}
