@@ -10,11 +10,23 @@ function useSubscribeLogging(cpnName) {
   })
 }
 
+function Home() {
+  useSubscribeLogging('Home')
+  return <h4>Home</h4>
+}
+
+function About() {
+  useSubscribeLogging('About')
+  return <h4>About</h4>
+}
+
 export default function CustomSampleHook() {
-  useSubscribeLogging()
+  useSubscribeLogging('CustomSampleHook')
   return (
     <div>
       <h3>CustomSampleHook</h3>
+      <Home />
+      <About />
     </div>
   )
 }

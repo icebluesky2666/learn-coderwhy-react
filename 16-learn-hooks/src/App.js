@@ -44,6 +44,7 @@ function App() {
       <h2>React App Template</h2>
       <hr />
       {/* 12. 自定义Hook */}
+      <button onClick={() => setShow(!show)}>切换组件显示/销毁</button>
       {show && <CustomSampleHook />}
 
       {/* 11. useLayoutEffect */}
@@ -86,20 +87,20 @@ function App() {
       {/* <TitleCounter /> */}
       {/* <HookTitleCounter /> */}
 
-      {/* <button onClick={() => setShow(!show)}>切换组件订阅</button>
-      {show && <EffectHookCancel />} */}
+      {/* <button onClick={() => setShow(!show)}>切换组件订阅</button> */}
+      {/* {show && <EffectHookCancel />} */}
 
       {/* Hook 补充 */}
       {/* <PureHookCounter2 /> */}
 
       {/* 2. 复杂状态变更 */}
-      {/* <MultiSateCpn />
-      <ComplexHookState /> */}
+      {/* <MultiSateCpn /> */}
+      {/* <ComplexHookState /> */}
 
       {/* 1. Hook 初体验 */}
-      {/* <ClassCounter />
-      <HookCounter />
-      <PureHookCounter /> */}
+      {/* <ClassCounter /> */}
+      {/* <HookCounter /> */}
+      {/* <PureHookCounter /> */}
     </div>
   )
 }
