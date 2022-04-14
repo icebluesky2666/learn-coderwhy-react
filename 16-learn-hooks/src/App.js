@@ -38,7 +38,9 @@ import { useState } from 'react'
 // import { UserContext, ThemeContext } from './utils/shareContext'
 // import HookContextShare from './11-自定义Hook/02-自定义Hook练习-Context共享'
 
-import CustomHookScrollHeight from './11-自定义Hook/03-自定义Hook-实时获取浏览器滚动高度'
+// import CustomHookScrollHeight from './11-自定义Hook/03-自定义Hook-实时获取浏览器滚动高度'
+
+import CustomHookLocalStorage from './11-自定义Hook/04-自定义Hook-localStorage-state'
 
 function App() {
   const [show, setShow] = useState(true)
@@ -57,7 +59,8 @@ function App() {
         </ThemeContext.Provider>
       </UserContext.Provider> */}
 
-      <CustomHookScrollHeight />
+      {/* <CustomHookScrollHeight /> */}
+      <CustomHookLocalStorage />
 
       {/* 11. useLayoutEffect */}
       {/* <HookEffectCounterDemo /> */}
