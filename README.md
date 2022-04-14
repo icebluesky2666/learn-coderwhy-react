@@ -565,3 +565,8 @@ yarn add react-router-dom
 
 - 与 useEffect 基本一样
 - 区别: useEffect DOM 更新后执行, 不阻塞 DOM 更新, useLayoutEffect DOM 更新前执行, 会阻塞 DOM 的更新
+
+**自定义 Hook**
+
+- 本质上只是一种函数代码逻辑的抽取, 严格意义上来说, 它本身并不算 React 的特性
+- 规定: 以 use 开头的函数, 被 React 认为是自定义 Hook

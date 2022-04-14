@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 
 // import ClassCounter from './01-hook初体验/01-Class-Counter'
 // import HookCounter from './01-hook初体验/02-hook-Counter'
@@ -31,19 +31,24 @@
 // import HookForwardRefDemo from './09-useImperativeHandle/01-回顾-forwardRef-用法'
 // import HookImperativeHandleDemo from './09-useImperativeHandle/02-useImperativeHandle-用法'
 
-import HookEffectCounterDemo from './10-useLayoutEffect/01-useEffect-counter-修改'
-import HookLayoutEffectCounterDemo from './10-useLayoutEffect/02-useLayoutEffect-counter-修改'
+// import HookEffectCounterDemo from './10-useLayoutEffect/01-useEffect-counter-修改'
+// import HookLayoutEffectCounterDemo from './10-useLayoutEffect/02-useLayoutEffect-counter-修改'
+
+import CustomSampleHook from './11-自定义Hook/01-认识自定义Hook'
 
 function App() {
-  // const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true)
 
   return (
     <div>
       <h2>React App Template</h2>
       <hr />
+      {/* 12. 自定义Hook */}
+      {show && <CustomSampleHook />}
+
       {/* 11. useLayoutEffect */}
-      <HookEffectCounterDemo />
-      <HookLayoutEffectCounterDemo />
+      {/* <HookEffectCounterDemo /> */}
+      {/* <HookLayoutEffectCounterDemo /> */}
 
       {/* 10. useImperativeHandle */}
       {/* <HookForwardRefDemo /> */}
