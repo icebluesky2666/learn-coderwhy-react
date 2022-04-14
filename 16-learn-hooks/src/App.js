@@ -14,8 +14,10 @@
 // import EffectHookCancel from './03-useEffect的使用/03-模拟订阅和取消订阅'
 // import MultiEffectHook from './03-useEffect的使用/04-多个useEffect的使用'
 
-import { UserContext, ThemeContext } from './utils/shareContext'
-import HookContext from './04-useContext的使用/01-useContext初体验'
+// import { UserContext, ThemeContext } from './utils/shareContext'
+// import HookContext from './04-useContext的使用/01-useContext初体验'
+
+import HookReducerCpn from './05-useReducer的使用'
 
 function App() {
   // const [show, setShow] = useState(true)
@@ -25,17 +27,21 @@ function App() {
       <h2>React App Template</h2>
       <hr />
 
-      {/* 1. Hook 初体验 */}
-      {/* <ClassCounter />
-      <HookCounter />
-      <PureHookCounter /> */}
+      {/* 6. useReducer */}
+      <HookReducerCpn />
 
-      {/* 2. 复杂状态变更 */}
-      {/* <MultiSateCpn />
-      <ComplexHookState /> */}
+      {/* 5. useConext */}
+      {/* 使用 Provider 的 value */}
+      {/* <UserContext.Provider value={{ name: '小陈', age: 20 }}>
+        <ThemeContext.Provider value={{ fontSize: 100, color: 'blue' }}>
+          <HookContext />
+        </ThemeContext.Provider>
+      </UserContext.Provider> */}
+      {/* 使用默认值 */}
+      {/* <HookContext /> */}
 
-      {/* Hook 补充 */}
-      {/* <PureHookCounter2 /> */}
+      {/* 4. 多个useEffect */}
+      {/* <MultiEffectHook /> */}
 
       {/* 3. useEffect */}
       {/* <TitleCounter /> */}
@@ -44,18 +50,17 @@ function App() {
       {/* <button onClick={() => setShow(!show)}>切换组件订阅</button>
       {show && <EffectHookCancel />} */}
 
-      {/* 4. 多个useEffect */}
-      {/* <MultiEffectHook /> */}
+      {/* Hook 补充 */}
+      {/* <PureHookCounter2 /> */}
 
-      {/* 5. useConext */}
-      <UserContext.Provider value={{ name: '小陈', age: 20 }}>
-        <ThemeContext.Provider value={{ fontSize: 100, color: 'blue' }}>
-          {/* 使用 Provider 的 value */}
-          <HookContext />
-        </ThemeContext.Provider>
-      </UserContext.Provider>
-      {/* 使用默认值 */}
-      <HookContext />
+      {/* 2. 复杂状态变更 */}
+      {/* <MultiSateCpn />
+      <ComplexHookState /> */}
+
+      {/* 1. Hook 初体验 */}
+      {/* <ClassCounter />
+      <HookCounter />
+      <PureHookCounter /> */}
     </div>
   )
 }

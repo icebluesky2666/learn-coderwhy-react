@@ -519,3 +519,15 @@ yarn add react-router-dom
 
 - 第一个参数: 接收一个 React.Context
 - 返回 Context 的值
+
+**useReducer**
+
+- 不是 redux 的某个替代品
+- 是 useState 的一种替代方案:
+
+1. 某些场景下, 如果 state 的处理逻辑比较复杂, 我们可以通过 useReducer 来对其进行拆分
+2. 或者本次变更的 state 需要依赖于之前 state 的情况下, 也可以使用
+
+- 第一个参数: 接收一个 reducer 的纯函数
+- 第二个参数: 接收一个初始值
+- 返回值: 一个数组, 第一个是 state, 第二个是 dispatch 函数, 功能与 redux 里面的 dispatch 一致, 会调用初始化时传入的 reducer 函数, 并将当前的 state 于 action 作为参数传入
