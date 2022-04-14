@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 
-function reducer(prevState, actions) {
-  switch (actions.type) {
+function reducer(prevState, action) {
+  switch (action.type) {
     case 'increment':
       return prevState + 1
     default:

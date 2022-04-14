@@ -531,3 +531,13 @@ yarn add react-router-dom
 - 第一个参数: 接收一个 reducer 的纯函数
 - 第二个参数: 接收一个初始值
 - 返回值: 一个数组, 第一个是 state, 第二个是 dispatch 函数, 功能与 redux 里面的 dispatch 一致, 会调用初始化时传入的 reducer 函数, 并将当前的 state 于 action 作为参数传入
+
+**useCallback**
+
+- useCallback 实际的目的是为了进行性能优化
+
+- 如何进行性能优化?
+
+1. useCallback 会返回一个函数的 memoized(有记忆的) 值
+2. 在依赖不改变时, 多次定义的时候, 返回的值是相同的
+3. 场景: 在将一个组件函数,传递给子元素进行回调时, 使用 useCallback 对函数进行处理
