@@ -544,5 +544,12 @@ yarn add react-router-dom
 
 **useMemo**
 
-- 我感觉和 useCallback 差不多...
+- 感觉和 useCallback 差不多...
+- 主要区别应该是? useCallback 主要针对于回调函数做优化, useMemo 主要针对于返回值优化(也可以是一个函数)
 - 根据依赖项判断是否需要更新函数返回
+
+**useRef**
+
+- 引入 DOM/组件(需要是 class 组件) 元素, 函数组件的话一般用于传递 ref 给子组件的某个 DOM 元素使用
+- 保存数据的特性: useRef 返回一个 ref 对象, 返回的 ref 对象在组件的整个生命周期保持不变
+- 举个例子: 如果我在组件渲染的时候给了 useRef(count) 的初始值(count=10),哪怕 count 在某个生命周期的操作下变成了 20, 此时的 ref 对象返回值还是 10,除非当你直接修改 ref.current 才会改变(注意这个操作不会导致组件重新渲染)

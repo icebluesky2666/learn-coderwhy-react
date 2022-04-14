@@ -22,8 +22,11 @@
 // import HookCallbackDemo1 from './06-useCallback的使用/01-不会进行性能优化的写法'
 // import HookCallbackDemo2 from './06-useCallback的使用/02-会进行性能优化的写法'
 
-import HookMemoComplexCalc from './07-useMemo的使用/01-useMemo复杂计算时的性能优化'
-import HookMemoSonCpn from './07-useMemo的使用/02-useMemo子组件应用'
+// import HookMemoComplexCalc from './07-useMemo的使用/01-useMemo复杂计算时的性能优化'
+// import HookMemoSonCpn from './07-useMemo的使用/02-useMemo子组件应用'
+
+import HookRefDemo from './08-useRef的使用/01-useRef引用dom'
+import HookRefDemo02 from './08-useRef的使用/02-useRef引用其它数据'
 
 function App() {
   // const [show, setShow] = useState(true)
@@ -32,10 +35,13 @@ function App() {
     <div>
       <h2>React App Template</h2>
       <hr />
+      {/* 9. useRef */}
+      <HookRefDemo />
+      <HookRefDemo02 />
 
       {/* 8. useMemo */}
-      <HookMemoComplexCalc />
-      <HookMemoSonCpn />
+      {/* <HookMemoComplexCalc /> */}
+      {/* <HookMemoSonCpn /> */}
 
       {/* 7. useCallback */}
       {/* <HookCallbackDemo1 /> */}
