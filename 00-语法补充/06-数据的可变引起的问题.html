@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/4.0.0/immutable.min.js"></script>
+    <script>
+      const im = Immutable
+      const info = {
+        name: 'why',
+        age: 20
+      }
+      // 拷贝: 虽然能够保持数据的不可变性,但是也需要考虑到数据大小引起的性能问题
+      // why
+      // const obj = { ...info }
+
+      // 直接赋值: 对性能消耗肯定是最小的,但是我们需要考虑数据的不可变性,不然就会出现下面前面给我赋值的某个对象中某个属性值更改,我内部对应的属性值也被更改的情况
+      // kobe
+      // const obj = info
+
+      // Immutable: 对象
+      const obj = im.Map(info)
+      /*
+        size: 2
+        __altered: false
+        __hash: undefined
+        __ownerID: undefined
+        _root: Ce
+        entries: Array(2)
+        0: (2) ['name', 'why']
+        1: (2) ['age', 20]
+        length: 2
+        [[Prototype]]: Array(0)
+        ownerID: m {}
+      */
+      console.log(obj)
+      info.name = 'kobe'
+      console.log(obj.get('name')) // why
+      // 每次修改的时候都会返回一个新的对象
+      const obj2 = obj.set('name', 'hello')
+      console.log(obj.get('name')) // why
+      console.log(obj2.get('name')) // hello
+
+      console.log('——————————————分割线——————————————')
+
+      // Immutable: 列表
+      const names = ['小小石', 'hp']
+      const namesIm = im.List(names)
+      // console.log(namesIm)
+      const newNamesIm = namesIm.set(0, 'why')
+      console.log(namesIm.get(0)) // 小小石
+      console.log(newNamesIm.get(0)) // why
+
+      // 上面的情况属于浅层转换,内部如果存在对线嵌入对线的情况,则不会转换为 immutable 对象,如果所有层需要转换可以用其API fromJs
+      const multiInfo = {
+        name: '1',
+        children: {
+          name: '11'
+        }
+      }
+      const multiInfoIM = im.fromJS(multiInfo)
+      console.log(multiInfoIM.get('children'))
+    </script>
+  </body>
+</html>

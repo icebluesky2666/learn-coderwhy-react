@@ -592,3 +592,42 @@ yarn add react-router-dom
 - 下载 React 源码找到 react-reconciler 包
 
 **Hooks 原理-useState**
+
+TODO: 听不懂, 回头自己去看...
+
+> 知识从来不是一蹴而就的，从来都是一个慢慢积累的过程
+
+- 位置: react 包 -> ReactHooks.js 内
+
+**项目规范**
+
+- 文件夹、文件名称统一小写、多个单词以连接符(-)链接
+- JavaScript 变量名称采用小驼峰标识
+- 常量全部使用大写字母, 组件采用大驼峰
+- 整个项目不再使用 class 组件, 统一使用函数式组件, 并且全面拥抱 Hooks
+- 所有的函数式组件, 为了避免不必要的渲染, 全部使用 memo(会对传入的 props 进行浅层比较) 进行包裹
+- 组件内部的状态, 使用 useState, useReducer
+- 业务数据全部放在 redux 中管理
+- 函数组件内部基本按照如下顺序编写代码:
+
+1. 组件内部 state 管理
+2. redux 中 hooks 代码
+3. 其它组件的 hooks 代码
+4. 其它逻辑代码
+5. 返回 JSX 代码
+
+- redux 代码
+
+1. 每个模块有自己独立的 reducer, 通过 combineReducer 进行合并
+2. 异步请求代码使用 redux-thunk, 并且编写在 actionCreators 中
+3. redux 直接采用 redux hooks 方式编写, 不再使用 connect
+
+- 网络请求采用 axios
+
+1. 针对 axios 进行二次封装, 方便后续维护
+2. 所有模块请求最终会放到一个请求文件中进行管理
+
+- 项目中使用 AntDesign
+
+1. 项目中某些 AntDesign 的组件会被拿过来直接使用
+2. 但是大部分组件还是需要自己编写
