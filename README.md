@@ -94,7 +94,9 @@ const context = React.createContext({}) 创建一个 context 用于数据共享
 
 ## setState
 
-**是否为异步函数？分成两种情况, React 会更新内部上下文情况选择**
+**是否为异步函数？分成两种情况, React 会根据内部上下文情况选择(其实就是看是不是 React 所调度的)**
+
+<font color="red">React v18 后以下的同步方法失效, 初步测试 v17.0.2 还能用</font>
 
 1. 异步：在组件生命周期或 React 合成事件(onClick...)中, setState 是异步的
 2. 同步：在 setTimeout 或者原生 DOM 事件中, setState 是同步的
