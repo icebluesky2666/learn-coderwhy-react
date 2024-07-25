@@ -194,6 +194,11 @@ eventEmitter.emit('[事件名称-string/symbol]', '参数一', '参数二', ...)
 2. 某些样式没有提示信息
 3. 大量的样式, 可能会导致代码混乱
 4. 某些样式无法编写(比如伪类/伪元素)
+   
+**css modules**
+<img width="1231" alt="image" src="https://github.com/user-attachments/assets/85b6bf86-666d-4904-89f4-608755101ce7">
+
+
 
 **CSS in JS**
 
